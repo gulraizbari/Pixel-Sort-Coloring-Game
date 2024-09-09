@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a711066e546e84d7aa77376c1f15bd73, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  timeToMoveBrick: 0.5
+  timeToMovBrPocToCar: 0.32
+  delayBetweenNextBrick: 0.09
+  delayToMoveNextBrickToCar: 0.005
+  brickJumpPower: 3.5
+  brickJumpEaseType: 6
+  brickJumpEaseType2: 2
+  delayBeforeCarrierToMoveAside: 0
+  brickYOffset: 0.23
+  buildingBrickUpScaleValue: 1.2
+  timeToMoveUp: 0.15
+  timeToMoveBack: 0.1
+  offsetYDancing: 0.3
+  nextDanceDelay: 0.03
+  danceDelay: 1.5

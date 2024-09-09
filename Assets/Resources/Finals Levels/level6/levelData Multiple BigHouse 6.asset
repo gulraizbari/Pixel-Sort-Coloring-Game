@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b4574641cdc46d581c6568fb661027, type: 3}
+  m_Name: levelData Multiple BigHouse 6
+  m_EditorClassIdentifier: 
+  pocketsSpawnPos: []
+  noOfPocketsToSpawn: 0
+  curLevelBuilding: {fileID: 0}
+  totalCarriers: 0
+  xOffsetForColliders: 1.92
+  slateBuilderOffsets:
+    horizontalOffset: 2
+    verticalOffset: 4
+    firstStackPos: 5.7
+  carrierToSpawn:
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: caa6f726144054ec3b1827b4e5455bb1, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: e1f274edff3b348fd879b18c9f91ead2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: caa6f726144054ec3b1827b4e5455bb1, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: caa6f726144054ec3b1827b4e5455bb1, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: e1f274edff3b348fd879b18c9f91ead2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: caa6f726144054ec3b1827b4e5455bb1, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: caa6f726144054ec3b1827b4e5455bb1, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: e1f274edff3b348fd879b18c9f91ead2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 02fd0c790d09c41d4986830dfff43aed, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aff27ea8b30874d0bbb6d2501721dae0, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aff27ea8b30874d0bbb6d2501721dae0, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 02fd0c790d09c41d4986830dfff43aed, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aff27ea8b30874d0bbb6d2501721dae0, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 02fd0c790d09c41d4986830dfff43aed, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aff27ea8b30874d0bbb6d2501721dae0, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 42f3b5678a45446d6a88a35ebd660844, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aff27ea8b30874d0bbb6d2501721dae0, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  allStacks: []
+  subLevel:
+  - {fileID: 11400000, guid: 85e2b0be1d9384150a61e53700f824f3, type: 2}
+  - {fileID: 11400000, guid: dd362ba5151074bbdabed2403bb812dc, type: 2}
+  - {fileID: 11400000, guid: a9c3b6d57622b4431a808c868cb16cc6, type: 2}
+  isMultiTierLevel: 1

@@ -1,0 +1,520 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b4574641cdc46d581c6568fb661027, type: 3}
+  m_Name: levelData 7 final
+  m_EditorClassIdentifier: 
+  pocketsSpawnPos:
+  - {fileID: 2536583695327600708, guid: 854bdd59bfdda4c73a4ad3e6217fcf85, type: 3}
+  - {fileID: 2536583695327600708, guid: e7331aa098354406ba907efd19b3ad67, type: 3}
+  - {fileID: 2536583695327600708, guid: 2caa9bbc1b77842c9a665518b0bab6de, type: 3}
+  - {fileID: 2536583695327600708, guid: cf367822b60554fe59f33f6c39215ce4, type: 3}
+  - {fileID: 2536583695327600708, guid: fe3c3b9efa411458eaa805de6b683a9f, type: 3}
+  stackData: []
+  noOfPocketsToSpawn: 1
+  curLevelBuilding: {fileID: 4409933603445900020, guid: 86e196a9845bb4625949ccbef80afb88, type: 3}
+  totalCarriers: 0
+  carrierToSpawn:
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 427dfb6853f234377aaffa61cccb3163, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: a6f891e8dd0274134b926884c410c1ce, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 427dfb6853f234377aaffa61cccb3163, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: a6f891e8dd0274134b926884c410c1ce, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 427dfb6853f234377aaffa61cccb3163, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: a6f891e8dd0274134b926884c410c1ce, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 427dfb6853f234377aaffa61cccb3163, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 28810e4ede7464b649493965fcf9d0a8, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: aa4a20c19fb74473bbe8979964b7f7aa, type: 3}
+  allStacks:
+  - stackData:
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 10
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 5
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 7
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 10
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  - stackData:
+    - brickData:
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 8
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  - stackData:
+    - brickData:
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  - stackData:
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 5
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  - stackData:
+    - brickData:
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 8
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 8
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  - stackData:
+    - brickData:
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 1
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 7c0efa9de5b6848c885b79d2d3b6dc19, type: 3}
+        brickImage: {fileID: -1685343011, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 5
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 8
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 0
+        endIndex: 2
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: ef97c845893604c8bb06fd48ea1f19c6, type: 3}
+        brickImage: {fileID: 318416910, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 7
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: d81525127297b4737bb3dbe2d6694ba0, type: 3}
+        brickImage: {fileID: 1747126161, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 3c9cb90b72de14698a9e6797a9353e02, type: 3}
+        brickImage: {fileID: 135403543, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - brickData:
+      - startIndex: 3
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 1ec8fa99726c1448b951b78405084c79, type: 3}
+        brickImage: {fileID: -373220152, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myBrick: {fileID: 3531308825145773157, guid: 121095b5ff40d4f53ab8495fb6f7d8db, type: 3}
+        brickImage: {fileID: -1246636398, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  subLevel: []
+  isMultiTierLevel: 0
