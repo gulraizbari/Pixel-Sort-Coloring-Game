@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using PixelSort.Feature.GridGeneration;
 using Sablo.Gameplay;
@@ -10,17 +9,20 @@ public class Roller : BaseGameplayModule, IRoller
     [SerializeField] private LevelData curLevelData;
     [SerializeField] private Transform firstCarSpawnPos;
     [SerializeField] private List<Carrier> spawnCarriers;
-    [SerializeField] private float CarrierXOffset=2.5f;
-    [SerializeField] private GameObject dustParticle;
     [SerializeField] private List<CarrierInfo> totalCarriersList;
+    [SerializeField] private float CarrierXOffset = 2.5f;
+    [SerializeField] private GameObject dustParticle;
     public Texture newBrickTexture;
     private int materialSumOfFirstTwoLevel;
-    int preCarrierOrder=0;
+    private int preCarrierOrder = 0;
     
     public GameObject GetSpawnParticle => dustParticle;
-    int IRoller.MaterialSumCount { get => materialSumOfFirstTwoLevel; set => materialSumOfFirstTwoLevel =value; }
+    int IRoller.MaterialSumCount
+    {
+        get => materialSumOfFirstTwoLevel; 
+        set => materialSumOfFirstTwoLevel = value;
+    }
     public IGridGenerator GridGeneratorHandler { get; set; }
-    // public ISlateBuilder SlateBuilderHandler { get; set; }
     public ILevelManager LevelManagerHandler { get; set; }
     public ITray TrayHandler { get; set; }
     
@@ -37,20 +39,20 @@ public class Roller : BaseGameplayModule, IRoller
         SetNextNextCarrierPos();
         spawnCarriers[0].OnMoveAside(MoveAllCarrierToNextOne);
         SetAllCarrierCellPosList();
-        int lastIndex = spawnCarriers.Count - 1;
+        var lastIndex = spawnCarriers.Count - 1;
         spawnCarriers[lastIndex].lastCarrier = true;
     }
 
     private void SumCarriersListForAllSubLevels()
     {
-        int totalSubLevelCount=0;
+        var totalSubLevelCount = 0;
         totalSubLevelCount = LevelManagerHandler.GetTotalSubLevelCount;
 
         if (totalSubLevelCount > 0)
         {
-            for (int i = LevelManagerHandler.SubLevelPref; i < totalSubLevelCount; i++)
+            for (int index = LevelManagerHandler.SubLevelPref; index < totalSubLevelCount; index++)
             {
-                AddToList(LevelManagerHandler.SubLevelList[i].carrierToSpawn, totalCarriersList);
+                AddToList(LevelManagerHandler.SubLevelList[index].carrierToSpawn, totalCarriersList);
             }
         }
         else
@@ -62,12 +64,11 @@ public class Roller : BaseGameplayModule, IRoller
 
     private void AddToList(List<CarrierInfo> carrierListOfSubLevel,List<CarrierInfo> totalCarrierList)
     {
-        foreach (var c in carrierListOfSubLevel)
+        foreach (var carrierInfo in carrierListOfSubLevel)
         {
-            totalCarrierList.Add(c);
+            totalCarrierList.Add(carrierInfo);
         }
     }
-    
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -82,7 +83,7 @@ public class Roller : BaseGameplayModule, IRoller
     private void SpawnCarrier()
     {
         var spawnPos = firstCarSpawnPos.position;
-        int count=0;
+        var count = 0;
         foreach (var carrier in totalCarriersList)
         {
             var newCarrier = Instantiate(carrier.CarrierType);
@@ -94,7 +95,6 @@ public class Roller : BaseGameplayModule, IRoller
             newCarrier.RollerInterface = this;
             newCarrier.LevelManagerInterface = LevelManagerHandler;
             newCarrier.GridGeneratorHandler = GridGeneratorHandler;
-            // newCarrier.SlateBuilderInterface = SlateBuilderHandler;
             count++;
         }
     }
@@ -109,16 +109,14 @@ public class Roller : BaseGameplayModule, IRoller
 
     private void SetNextNextCarrierPos()
     {
-        for (int i = spawnCarriers.Count-1; i >= 1 ; i--)
+        for (int index = spawnCarriers.Count-1; index >= 1 ; index--)
         {
-            spawnCarriers[i].nextCarrierPos = spawnCarriers[i-1].transform;
+            spawnCarriers[index].nextCarrierPos = spawnCarriers[index - 1].transform;
         }
     }
 
     public void MoveAllCarrierToNextOne()
     {
-        Debug.Log("<color=yellow>{MoveAllCarrierToNextOne}</color>");
-
         foreach (var car in spawnCarriers)
         {
             if (car.isUpFront)
@@ -129,7 +127,6 @@ public class Roller : BaseGameplayModule, IRoller
             }
         }
         
-        // Debug.Log($"<color=yellow>{spawnCarriers[preCarrierOrder].carrierColor}</color>");
         if (preCarrierOrder<spawnCarriers.Count)
         {
             spawnCarriers[preCarrierOrder].Initialize();
@@ -156,7 +153,6 @@ public class Roller : BaseGameplayModule, IRoller
 
      void IRoller.RemoveCarrierFromRoller(Carrier carrierToRemove)
     {
-        //Debug.LogError("Removed !");
         spawnCarriers.Remove(carrierToRemove);
     }
 
@@ -172,16 +168,13 @@ public class Roller : BaseGameplayModule, IRoller
 
      bool IRoller.IsLastCarrierOfSubLevel()
      {
-         if (TapController.Instance.GetNoOfCarriersPass() == LevelManagerHandler.GetCurrentLevel.carrierToSpawn.Count/*totalCarriers && LevelManagerHandler.isOfMultiTierLevel*/)
+         if (TapController.Instance.GetNoOfCarriersPass() == LevelManagerHandler.GetCurrentLevel.carrierToSpawn.Count)
          {
-             Debug.Log("true");
              return true;
          }
          else
          {
-             Debug.Log("false");
              return false;
          }
-           
      }
 }

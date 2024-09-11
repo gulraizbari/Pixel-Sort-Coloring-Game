@@ -80,7 +80,6 @@ public class SubStack
     public Types.BrickType stackType;
     [ShowIf("@stackType == Types.BrickType.Rope")] public int ropeId;
     [OnValueChanged("UpdateBrickImage")] public Chip myChip;
-    // [OnValueChanged("UpdateBrickImage")] public Brick myBrick;
     [PreviewField] public Sprite chipImage;
      private void UpdateBrickImage()
      {

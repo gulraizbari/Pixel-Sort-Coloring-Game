@@ -65,11 +65,11 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
     public void OnLevelResume()
     {
         var minStack = FindPadWithLeastBrickCount();
-        var isMinStackEmpty = minStack.bricksStack.Count == 0;
-        var lastBrickIndex = minStack.bricksStack.Count - 1;
+        var isMinStackEmpty = minStack.chipsStack.Count == 0;
+        var lastBrickIndex = minStack.chipsStack.Count - 1;
         var basePos = minStack.padBase.transform.position;
-        var lastTwelve = TapController.Instance.TrayHandler.MoveBrickFromPocketToStack(minStack.bricksStack.Count > 0 ? minStack.bricksStack[lastBrickIndex].transform.position : basePos, 0.32f);
-        lastTwelve.ForEach(brick => newSlatesList[slateIndex]._padList[padIndex].bricksStack.Add(brick));
+        var lastTwelve = TapController.Instance.TrayHandler.MoveBrickFromPocketToStack(minStack.chipsStack.Count > 0 ? minStack.chipsStack[lastBrickIndex].transform.position : basePos, 0.32f);
+        lastTwelve.ForEach(brick => newSlatesList[slateIndex]._padList[padIndex].chipsStack.Add(brick));
         if (!isMinStackEmpty)
         {
             newSlatesList[slateIndex].UpdateColliderLength(minStack);
@@ -228,24 +228,24 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
             for (int j = 0; j < newSlatesList[i]._padList.Count; j++)
             {
                 var currentPad = newSlatesList[i]._padList[j];
-                if (currentPad.bricksStack.Count == 0)
+                if (currentPad.chipsStack.Count == 0)
                 {
-                    if (currentPad.bricksStack.Count < minBrickCount)
+                    if (currentPad.chipsStack.Count < minBrickCount)
                     {
                         stackWithMinBrickCount = currentPad;
-                        minBrickCount = currentPad.bricksStack.Count;
+                        minBrickCount = currentPad.chipsStack.Count;
                         padIndex = j;
                         slateIndex = i;
                         stackWithMinBrickCount.isSparked = false;
                         stackWithMinBrickCount.padBase.SetActive(true); // activating base again
                     }
                 }
-                else if (currentPad.bricksStack.Count > 0 && currentPad.bricksStack[0].brickColor != BrickColor.EmptyBrick)
+                else if (currentPad.chipsStack.Count > 0 && currentPad.chipsStack[0].brickColor != BrickColor.EmptyBrick)
                 {
-                    if (currentPad.bricksStack.Count < minBrickCount)
+                    if (currentPad.chipsStack.Count < minBrickCount)
                     {
                         stackWithMinBrickCount = currentPad;
-                        minBrickCount = currentPad.bricksStack.Count;
+                        minBrickCount = currentPad.chipsStack.Count;
                         padIndex = j;
                         slateIndex = i;
                     }
@@ -306,13 +306,13 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
         var newRopeHandler = Instantiate(theRopeHandler);
         allRopes.Add(newRopeHandler);
         newRopeHandler.ropeId = ropeId;
-        var edgePos1 = stack1.bricksStack[brickIndex1].transform.position;
-        var edgePos2 = stack2.bricksStack[brickIndex2].transform.position;
+        var edgePos1 = stack1.chipsStack[brickIndex1].transform.position;
+        var edgePos2 = stack2.chipsStack[brickIndex2].transform.position;
         edgePos1.z -= 0.65f;
         edgePos2.z -= 0.65f;
         DOVirtual.DelayedCall(1f, () =>
         {
-            newRopeHandler.SetRope(stack1.bricksStack[brickIndex1].ropeJoint, stack2.bricksStack[brickIndex2].ropeJoint);
+            newRopeHandler.SetRope(stack1.chipsStack[brickIndex1].ropeJoint, stack2.chipsStack[brickIndex2].ropeJoint);
             DOVirtual.DelayedCall(1f, () =>
             {
                 SpawnRopeEdges(edgePos1, edgePos2, newRopeHandler.gameObject);
