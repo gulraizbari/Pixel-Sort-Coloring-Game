@@ -7,7 +7,7 @@ public class BuildingMaker : BaseGameplayModule
 {
   [SerializeField] private LevelData curLevelData;
   [SerializeField] private Building buildingToSpawn;
-  public IlevelManager LevelManagerHandler { get; set; }
+  public ILevelManager LevelManagerHandler { get; set; }
 
   public override void Initialize()
   {

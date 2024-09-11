@@ -9,12 +9,12 @@ using UnityEngine;
 public class Pocket : MonoBehaviour
 {
     public List<Transform> pocketCell;
-    public List<Brick> pocBrickList;
+    public List<Chip> pocBrickList;
     [ShowInInspector] public const int MaxCapacity = 21;
     public bool isFull;
     [SerializeField] private float brickDelay = 0.15f;
     [Header("SpawnCellFields")] 
-    [SerializeField] private GameObject objectPrefab; 
+    [SerializeField] private GameObject objectPrefab;
     [SerializeField] private GameObject edgeObj;
     [SerializeField] private GameObject edgeObj2;
     [SerializeField] private int numberOfObjects = 10;
@@ -56,16 +56,17 @@ public class Pocket : MonoBehaviour
             {
                 obj = Instantiate(objectPrefab, transform);
             }
+
             var xPosition = (i - (numberOfObjects - 1) / 2.0f) * spacing;
             obj.transform.localPosition = new Vector3(xPosition, 0, 0);
             pocketCell.Add(obj.transform);
         }
     }
 
-    public int FillBricksToPocket(List<Brick> selectedBricks)
+    public int FillBricksToPocket(List<Chip> selectedBricks)
     {
         var startPoint = pocBrickList.Count;
-        var listOfBrickToRemove = new List<Brick>();
+        var listOfBrickToRemove = new List<Chip>();
         for (var i = 0; i < selectedBricks.Count; i++)
         {
             if (pocBrickList.Count < MaxCapacity)
@@ -77,6 +78,7 @@ public class Pocket : MonoBehaviour
                 }
             }
         }
+
         var endPoint = pocBrickList.Count;
         StartCoroutine(ResetBrickPos(startPoint, endPoint));
         ClearList(listOfBrickToRemove, selectedBricks);
@@ -85,15 +87,15 @@ public class Pocket : MonoBehaviour
         {
             GameLoop.Instance.RunPocketFillTutorial();
         }
+
         return selectedBricks.Count;
     }
 
-    public void InsertBricksToPocket(int similarItemIndex, List<Brick> selectedBricks)
+    public void InsertBricksToPocket(int similarItemIndex, List<Chip> selectedBricks)
     {
-        Debug.LogError($"Inserts:   {pocBrickList[^1].brickColor}");
         var startPoint = similarItemIndex + 1;
         var indexOfBrickInsertion = similarItemIndex + 1;
-        var listOfBrickToRemove = new List<Brick>();
+        var listOfBrickToRemove = new List<Chip>();
         for (var i = 0; i < selectedBricks.Count; i++)
         {
             if (pocBrickList.Count < MaxCapacity)
@@ -103,6 +105,7 @@ public class Pocket : MonoBehaviour
                 listOfBrickToRemove.Add(selectedBricks[i]);
             }
         }
+
         ShiftBrickToNextIndex(similarItemIndex + selectedBricks.Count);
         var endPoint = startPoint + selectedBricks.Count;
         endPoint = Mathf.Min(endPoint, pocBrickList.Count);
@@ -110,6 +113,7 @@ public class Pocket : MonoBehaviour
         {
             StartCoroutine(ResetBrickPos(startPoint, endPoint));
         }
+
         CheckIfPocketIsFull();
         if (pocBrickList.Count >= 14)
         {
@@ -119,7 +123,7 @@ public class Pocket : MonoBehaviour
 
     private void ShiftBrickToNextIndex(int from)
     {
-        int index = 0;
+        var index = 0;
         foreach (var brick in pocBrickList)
         {
             if (index > from)
@@ -135,8 +139,8 @@ public class Pocket : MonoBehaviour
             index++;
         }
     }
-    
-    private void ClearList(List<Brick> brickListToRem, List<Brick> selectedList)
+
+    private void ClearList(List<Chip> brickListToRem, List<Chip> selectedList)
     {
         foreach (var brick in brickListToRem)
         {
@@ -144,12 +148,13 @@ public class Pocket : MonoBehaviour
         }
     }
 
-    public void RemoveBrickFromPocket(List<Brick> bricksToRemove, int startPoint)
+    public void RemoveBrickFromPocket(List<Chip> bricksToRemove, int startPoint)
     {
         foreach (var brick in bricksToRemove)
         {
             pocBrickList.Remove(brick);
         }
+
         Invoke(nameof(Reposition), 0.01f);
     }
 
@@ -164,7 +169,7 @@ public class Pocket : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveAllBricks(List<Brick> bricksToMove, Brick lastBrick, Pocket pocket)
+    private IEnumerator MoveAllBricks(List<Chip> bricksToMove, Chip lastChip, Pocket pocket)
     {
         var pocListPos = pocketCell.Select(x => x.transform.position).ToList();
         for (var index = 0; index < bricksToMove.Count; index++)
@@ -172,7 +177,7 @@ public class Pocket : MonoBehaviour
             {
                 var brick = bricksToMove[index];
                 var indexOfBrick = pocBrickList.IndexOf(brick);
-                brick.MoveToTargetCellPosByTray(indexOfBrick, brick == lastBrick
+                brick.MoveToTargetCellPosByTray(indexOfBrick, brick == lastChip
                         ? () =>
                         {
                             TapController.Instance.GameFail();
@@ -211,12 +216,12 @@ public class Pocket : MonoBehaviour
         }
     }
 
-    private void ActionCallBack(Brick brick)
+    private void ActionCallBack(Chip chip)
     {
         TapController.Instance.GameFail();
         AudioManager.instance.ThrowSound();
-        brick.transform.SetParent(transform);
-        var brickMaterial = brick.transform.GetChild(0).GetComponent<Renderer>().material;
+        chip.transform.SetParent(transform);
+        var brickMaterial = chip.transform.GetChild(0).GetComponent<Renderer>().material;
         var brickTexture = newBrickTexture;
         brickMaterial.mainTexture = brickTexture;
     }
@@ -226,7 +231,8 @@ public class Pocket : MonoBehaviour
         var tapInstance = TapController.Instance;
         var carrier = tapInstance.curCarrierHandler;
 
-        if (tapInstance.TrayHandler.GetPocketCount() >= MaxCapacity && carrier.GetCarrierCount() >= carrier.GetMaxSize())
+        if (tapInstance.TrayHandler.GetPocketCount() >= MaxCapacity &&
+            carrier.GetCarrierCount() >= carrier.GetMaxSize())
         {
             // Check if there's a brick with the specified color in the list
             var foundBrick = pocBrickList.Find(brick => brick.brickColor == nextCarrierColor);
@@ -249,7 +255,7 @@ public class Pocket : MonoBehaviour
         }
     }
 
-    public List<Brick> MoveBricksBackToStack(Vector3 topBrick, float offset)
+    public List<Chip> MoveBricksBackToStack(Vector3 topBrick, float offset)
     {
         var posList = new List<Vector3>();
         topBrick.y += 0.11f;
@@ -267,7 +273,7 @@ public class Pocket : MonoBehaviour
             startPoint = 0;
         }
 
-        var lastTwelve = new List<Brick>();
+        var lastTwelve = new List<Chip>();
 
         for (int i = startPoint; i <= endPoint; i++)
         {

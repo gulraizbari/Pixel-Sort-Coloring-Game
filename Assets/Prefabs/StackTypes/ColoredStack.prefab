@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5878866663510387591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2654610666543911906}
+  - component: {fileID: 6506492254362963174}
+  - component: {fileID: 2304571384213320808}
+  m_Layer: 0
+  m_Name: ColoredStack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2654610666543911906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878866663510387591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6506492254362963174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878866663510387591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4760c2569786043cf92ec21eae7535e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bricksStack: []
+  isSelected: 0
+  padBase: {fileID: 0}
+  hiddenBox: {fileID: 0}
+  sparkParticle: {fileID: 0}
+  stackId: 0
+  isSparked: 0
+  questionEndIndex: 0
+  subStacks: []
+  Amplitude: 0.5
+  Frquency: 1
+  duration: 0.02
+  isMultiProducer: 0
+  chainedSubStack:
+    startIndex: 0
+    endIndex: 0
+    stackType: 0
+    ropeId: 0
+    myChip: {fileID: 0}
+    chipImage: {fileID: 0}
+  chainedStackAddress:
+    indexOfSlate: 0
+    indexOfStack: 0
+    indexOfSubStack: 0
+    ropeId: 0
+  multiProducerDataList: []
+  duration2: 0.45
+--- !u!65 &2304571384213320808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878866663510387591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.33, y: 3.42, z: 1}
+  m_Center: {x: 0, y: 1.68, z: 0}

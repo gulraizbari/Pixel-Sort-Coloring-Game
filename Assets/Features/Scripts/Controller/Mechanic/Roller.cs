@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PixelSort.Feature.GridGeneration;
 using Sablo.Gameplay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,12 +18,12 @@ public class Roller : BaseGameplayModule, IRoller
     int preCarrierOrder=0;
     
     public GameObject GetSpawnParticle => dustParticle;
-    
-     int IRoller.MaterialSumCount { get => materialSumOfFirstTwoLevel; set => materialSumOfFirstTwoLevel =value; }
-
-    public ISlateBuilder SlateBuilderHandler { get; set; }
-    public IlevelManager LevelManagerHandler { get; set; }
+    int IRoller.MaterialSumCount { get => materialSumOfFirstTwoLevel; set => materialSumOfFirstTwoLevel =value; }
+    public IGridGenerator GridGeneratorHandler { get; set; }
+    // public ISlateBuilder SlateBuilderHandler { get; set; }
+    public ILevelManager LevelManagerHandler { get; set; }
     public ITray TrayHandler { get; set; }
+    
     public override void Initialize()
     {   
         Application.targetFrameRate = 120;
@@ -92,7 +93,8 @@ public class Roller : BaseGameplayModule, IRoller
             newCarrier.TrayInterface = TrayHandler;
             newCarrier.RollerInterface = this;
             newCarrier.LevelManagerInterface = LevelManagerHandler;
-            newCarrier.SlateBuilderInterface = SlateBuilderHandler;
+            newCarrier.GridGeneratorHandler = GridGeneratorHandler;
+            // newCarrier.SlateBuilderInterface = SlateBuilderHandler;
             count++;
         }
     }

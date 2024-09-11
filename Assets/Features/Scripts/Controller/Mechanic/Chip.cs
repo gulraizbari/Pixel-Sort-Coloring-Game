@@ -5,7 +5,7 @@ using Sablo.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Brick : MonoBehaviour
+public class Chip : MonoBehaviour
 {
     public BrickColor brickColor;
     [PreviewField] public Sprite brickSprite;

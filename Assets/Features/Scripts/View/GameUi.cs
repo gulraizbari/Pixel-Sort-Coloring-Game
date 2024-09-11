@@ -38,7 +38,7 @@ public class GameUi : MonoBehaviour
     public TMP_Text tutorialDescription;
     public List<TutorialData> tutorialData;
 
-    public IlevelManager LevelManagerHandler;
+    public ILevelManager LevelManagerHandler;
 
     private void Start()
     {

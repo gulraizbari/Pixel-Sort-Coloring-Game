@@ -18,7 +18,7 @@ public class GameLoop : MonoBehaviour
     private Action onLevelContinue;
     private bool isVideoPrepared=false;
     public bool isUiActive;
-    public IlevelManager LevelHandler { get; set; }
+    public ILevelManager LevelHandler { get; set; }
 
     private void Awake()
     {
