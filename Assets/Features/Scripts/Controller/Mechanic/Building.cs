@@ -13,7 +13,7 @@ public class Building : MonoBehaviour
 {
     [SerializeField] private List<Transform> buildingParents;
     public List<Transform> buildingBricks;
-    public List<Brick> brickContainer;
+    public List<Chip> brickContainer;
     public int currentBrickIndex;
     public static Building Instance;
     [SerializeField] private List<GameObject> Ornaments;
@@ -145,9 +145,9 @@ public class Building : MonoBehaviour
         });
     }
 
-    public void AddBrickToBuilding(Brick brickToAdd)
+    public void AddBrickToBuilding(Chip chipToAdd)
     {
-        brickContainer.Add(brickToAdd);
+        brickContainer.Add(chipToAdd);
     }
 
     private void TurnOnOrnamentsOnEnd()

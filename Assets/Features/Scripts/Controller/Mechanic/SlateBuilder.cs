@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using PixelSort.Feature.GridGeneration;
 using RopeToolkit;
 using Sablo.Gameplay;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
 {
     [SerializeField] private Slate _slate;
     [SerializeField] private LevelData curLevelData;
+    [SerializeField] private LevelPositionData curLevelPositionData;
     [SerializeField] private List<Slate> newSlatesList;
     [SerializeField] float horizontalOffset = 1.27f;
     [SerializeField] float verticalOffset = 3.5f;
@@ -20,11 +22,12 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
     [SerializeField] private List<RopeHandler> allRopes;
     [SerializeField] private GameObject ropeEdge;
     private int slateIndex, padIndex;
-    public IlevelManager LevelManagerHandler { get; set; }
+    public ILevelManager LevelManagerHandler { get; set; }
     public Material GetRopeMaterial => ropeMaterial;
 
     public override void Initialize()
     {
+        SetLevelPositionData();
         SetLevelData();
         SpawnSlates();
         SortStackByRope();
@@ -37,6 +40,7 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
     {
         newSlatesList.ForEach(x => x.gameObject.SetActive(false));
         newSlatesList.Clear();
+        SetLevelPositionData();
         SetLevelData();
         stacksWithRope.Clear();
         allRopes.Clear();
@@ -52,6 +56,11 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
     {
         curLevelData = LevelManagerHandler.GetCurrentLevel;
     }
+
+    private void SetLevelPositionData()
+    {
+        curLevelPositionData = LevelManagerHandler.GetCurrentPositionLevel;
+    }
     
     public void OnLevelResume()
     {
@@ -66,113 +75,152 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
             newSlatesList[slateIndex].UpdateColliderLength(minStack);
         }
     }
-
+    
     private void SpawnSlates()
     {
-        int slateCount = curLevelData.allStacks.Count;
+        var grid = curLevelPositionData.Grid;
+        var rows = curLevelPositionData.Row;
+        var columns = curLevelPositionData.Column;
 
-        for (int i = 0; i < slateCount; i++)
+        for (int x = 0; x < columns; x++)
         {
-            var newSlate = Instantiate(_slate);
-            newSlate.gameObject.name = "Slate" + i;
-            newSlatesList.Add(newSlate);
-            newSlate.SlateBuilderInterface = this;
-            newSlate.slateIndex = i;
-            var slatePos = Vector3.zero;
-            var data = curLevelData.slateBuilderOffsets;
-            
-            if (slateCount == 1)
+            for (int y = 0; y < rows; y++)
             {
-                // Center position
-                slatePos = new Vector3(0, 0, 0);
-            }
-            else if (slateCount == 2)
-            {
-                // Left and right positions
-                GameLoop.Instance.ChangeCameraPosAccToRowCount(2);
-                if (i == 0)
+                var cellData = grid[x, y];
+                if (cellData.tileType == TileType.Empty)
                 {
-                    slatePos = new Vector3(-data.horizontalOffset, 0, data.firstStackPos); // Top-left position
+                    Debug.LogError("No Stack here");
+                    continue;
                 }
-                else if (i == 1)
-                {
-                    slatePos = new Vector3(data.horizontalOffset, 0, data.firstStackPos); // Top-right position
-                }
-            }
-            else if (slateCount == 3)
-            {
-                // Vertical positions
-                slatePos = new Vector3(0, -i * verticalOffset, 0);
-            }
-            else if (slateCount == 4)
-            {
-                GameLoop.Instance.ChangeCameraPosAccToRowCount(4);
-                // Left and right positions with vertical offset
-                if (i == 0)
-                {
-                    slatePos = new Vector3(-horizontalOffset, 0, firstRowZPos); // Top-left position
-                }
-                else if (i == 1)
-                {
-                    slatePos = new Vector3(horizontalOffset, 0, firstRowZPos); // Top-right position
-                }
-                else if (i == 2)
-                {
-                    slatePos = new Vector3(-horizontalOffset, 0, firstRowZPos - verticalOffset); // Bottom-left position
-                }
-                else if (i == 3)
-                {
-                    slatePos = new Vector3(horizontalOffset, 0, firstRowZPos - verticalOffset); // Bottom-right position
-                }
-            }
-            else if (slateCount == 6)
-            {
-                // Left and right positions with vertical offset
-                if (i == 0)
-                {
-                    slatePos = new Vector3(-data.horizontalOffset, 0, data.firstStackPos); // Top-left position
-                }
-                else if (i == 1)
-                {
-                    slatePos = new Vector3(data.horizontalOffset, 0, data.firstStackPos); // Top-right position
-                }
-                else if (i == 2)
-                {
-                    slatePos = new Vector3(-data.horizontalOffset, 0,
-                        data.firstStackPos - data.verticalOffset); // Bottom-left position
-                }
-                else if (i == 3)
-                {
-                    slatePos = new Vector3(data.horizontalOffset, 0,
-                        data.firstStackPos - data.verticalOffset); // Bottom-right position
-                }
-                else if (i == 4)
-                {
-                    slatePos = new Vector3(-data.horizontalOffset, 0,
-                        data.firstStackPos - (data.verticalOffset * 1.9f)); // Bottom-left position
-                }
-                else if (i == 5)
-                {
-                    slatePos = new Vector3(data.horizontalOffset, 0,
-                        data.firstStackPos - (data.verticalOffset * 1.9f)); // Bottom-right position
-                }
-            }
-            else
-            {
-                // Default vertical arrangement for more than 4 slates
-                slatePos = new Vector3(0, -i * data.verticalOffset, 0);
-            }
+                var newSlate = Instantiate(_slate);
+                newSlate.gameObject.name = $"Slate{x}-{y}";
+                newSlatesList.Add(newSlate);
+                // newSlate.SlateBuilderInterface = this;
+                var slatePosition = new Vector3(x * horizontalOffset, 0, y * verticalOffset);
+                var data = curLevelData.slateBuilderOffsets;
+                newSlate.transform.position = slatePosition;
+                SetPadOffset();
+                newSlate.Initialize();
+                
+                // if (cellData.isMirror)
+                // {
+                //     
+                // }
 
-            newSlate.transform.position = slatePos;
-            newSlate.SetData(curLevelData.allStacks[i].stackData);
-            SetPadOffset();
-            newSlate.Initialize();
+                // if (cellData.isMultiProducer)
+                // {
+                //     
+                // }
+            }
         }
     }
 
-    private Pad FindPadWithLeastBrickCount()
+    // private void SpawnSlates()
+    // {
+    //     var slateCount = curLevelData.allStacks.Count;
+    //
+    //     for (int i = 0; i < slateCount; i++)
+    //     {
+    //         var newSlate = Instantiate(_slate);
+    //         newSlate.gameObject.name = "Slate" + i;
+    //         newSlatesList.Add(newSlate);
+    //         newSlate.SlateBuilderInterface = this;
+    //         newSlate.slateIndex = i;
+    //         var slatePos = Vector3.zero;
+    //         var data = curLevelData.slateBuilderOffsets;
+    //         
+    //         if (slateCount == 1)
+    //         {
+    //             // Center position
+    //             slatePos = new Vector3(0, 0, 0);
+    //         }
+    //         else if (slateCount == 2)
+    //         {
+    //             // Left and right positions
+    //             GameLoop.Instance.ChangeCameraPosAccToRowCount(2);
+    //             if (i == 0)
+    //             {
+    //                 slatePos = new Vector3(-data.horizontalOffset, 0, data.firstStackPos); // Top-left position
+    //             }
+    //             else if (i == 1)
+    //             {
+    //                 slatePos = new Vector3(data.horizontalOffset, 0, data.firstStackPos); // Top-right position
+    //             }
+    //         }
+    //         else if (slateCount == 3)
+    //         {
+    //             // Vertical positions
+    //             slatePos = new Vector3(0, -i * verticalOffset, 0);
+    //         }
+    //         else if (slateCount == 4)
+    //         {
+    //             GameLoop.Instance.ChangeCameraPosAccToRowCount(4);
+    //             // Left and right positions with vertical offset
+    //             if (i == 0)
+    //             {
+    //                 slatePos = new Vector3(-horizontalOffset, 0, firstRowZPos); // Top-left position
+    //             }
+    //             else if (i == 1)
+    //             {
+    //                 slatePos = new Vector3(horizontalOffset, 0, firstRowZPos); // Top-right position
+    //             }
+    //             else if (i == 2)
+    //             {
+    //                 slatePos = new Vector3(-horizontalOffset, 0, firstRowZPos - verticalOffset); // Bottom-left position
+    //             }
+    //             else if (i == 3)
+    //             {
+    //                 slatePos = new Vector3(horizontalOffset, 0, firstRowZPos - verticalOffset); // Bottom-right position
+    //             }
+    //         }
+    //         else if (slateCount == 6)
+    //         {
+    //             // Left and right positions with vertical offset
+    //             if (i == 0)
+    //             {
+    //                 slatePos = new Vector3(-data.horizontalOffset, 0, data.firstStackPos); // Top-left position
+    //             }
+    //             else if (i == 1)
+    //             {
+    //                 slatePos = new Vector3(data.horizontalOffset, 0, data.firstStackPos); // Top-right position
+    //             }
+    //             else if (i == 2)
+    //             {
+    //                 slatePos = new Vector3(-data.horizontalOffset, 0,
+    //                     data.firstStackPos - data.verticalOffset); // Bottom-left position
+    //             }
+    //             else if (i == 3)
+    //             {
+    //                 slatePos = new Vector3(data.horizontalOffset, 0,
+    //                     data.firstStackPos - data.verticalOffset); // Bottom-right position
+    //             }
+    //             else if (i == 4)
+    //             {
+    //                 slatePos = new Vector3(-data.horizontalOffset, 0,
+    //                     data.firstStackPos - (data.verticalOffset * 1.9f)); // Bottom-left position
+    //             }
+    //             else if (i == 5)
+    //             {
+    //                 slatePos = new Vector3(data.horizontalOffset, 0,
+    //                     data.firstStackPos - (data.verticalOffset * 1.9f)); // Bottom-right position
+    //             }
+    //         }
+    //         else
+    //         {
+    //             // Default vertical arrangement for more than 4 slates
+    //             slatePos = new Vector3(0, -i * data.verticalOffset, 0);
+    //         }
+    //
+    //         newSlate.transform.position = slatePos;
+    //         newSlate.SetData(curLevelData.allStacks[i].stackData);
+    //         SetPadOffset();
+    //         newSlate.Initialize();
+    //     }
+    // }
+
+    private Stack FindPadWithLeastBrickCount()
     {
-        Pad padWithMinBrickCount = null;
+        Stack stackWithMinBrickCount = null;
         var minBrickCount = int.MaxValue;
 
         for (int i = 0; i < newSlatesList.Count; i++)
@@ -184,19 +232,19 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
                 {
                     if (currentPad.bricksStack.Count < minBrickCount)
                     {
-                        padWithMinBrickCount = currentPad;
+                        stackWithMinBrickCount = currentPad;
                         minBrickCount = currentPad.bricksStack.Count;
                         padIndex = j;
                         slateIndex = i;
-                        padWithMinBrickCount.isSparked = false;
-                        padWithMinBrickCount.padBase.SetActive(true); // activating base again
+                        stackWithMinBrickCount.isSparked = false;
+                        stackWithMinBrickCount.padBase.SetActive(true); // activating base again
                     }
                 }
                 else if (currentPad.bricksStack.Count > 0 && currentPad.bricksStack[0].brickColor != BrickColor.EmptyBrick)
                 {
                     if (currentPad.bricksStack.Count < minBrickCount)
                     {
-                        padWithMinBrickCount = currentPad;
+                        stackWithMinBrickCount = currentPad;
                         minBrickCount = currentPad.bricksStack.Count;
                         padIndex = j;
                         slateIndex = i;
@@ -205,7 +253,7 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
             }
         }
 
-        return padWithMinBrickCount;
+        return stackWithMinBrickCount;
     }
     
     private void SetPadOffset()
@@ -253,7 +301,7 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
         }
     }
 
-    private void SpawnRope(Pad stack1, int brickIndex1, Pad stack2, int brickIndex2, int ropeId)
+    private void SpawnRope(Stack stack1, int brickIndex1, Stack stack2, int brickIndex2, int ropeId)
     {
         var newRopeHandler = Instantiate(theRopeHandler);
         allRopes.Add(newRopeHandler);
@@ -325,18 +373,18 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
         return stacksWithRope.IndexOf(subStackToGetIndexOf);
     }
 
-    StackAddress ISlateBuilder.GetSubStackAddressByRopId(int existingRopId, StackAddress existingSubStackAddress)
-    {
-        var similarRopIdStackAddress = stackAddresses.Find(x => x.ropeId == existingRopId && x != existingSubStackAddress);
-        return similarRopIdStackAddress;
-    }
+    // StackAddress ISlateBuilder.GetSubStackAddressByRopId(int existingRopId, StackAddress existingSubStackAddress)
+    // {
+    //     var similarRopIdStackAddress = stackAddresses.Find(x => x.ropeId == existingRopId && x != existingSubStackAddress);
+    //     return similarRopIdStackAddress;
+    // }
+    //
+    // StackAddress ISlateBuilder.GetSubStackAddressByIndex(int indexOfSubStackInList)
+    // {
+    //     return stackAddresses[indexOfSubStackInList];
+    // }
 
-    StackAddress ISlateBuilder.GetSubStackAddressByIndex(int indexOfSubStackInList)
-    {
-        return stackAddresses[indexOfSubStackInList];
-    }
-
-    Pad ISlateBuilder.GetStackContainingSubStackWithEqualRopId(int indexOfSlate, int indexOfPad)
+    Stack ISlateBuilder.GetStackContainingSubStackWithEqualRopId(int indexOfSlate, int indexOfPad)
     {
         return newSlatesList[indexOfSlate]._padList[indexOfPad];
     }
@@ -348,16 +396,16 @@ public class SlateBuilder : BaseGameplayModule, ISlateBuilder
 
     int ISlateBuilder.GetTotalNumberOfSlates()
     {
-        return curLevelData.allStacks.Count;
+        return curLevelData.allStacks.stackData.Count;
     }
 }
 
-
-[Serializable]
-public class StackAddress
-{
-    public int indexOfSlate;
-    public int indexOfStack;
-    public int indexOfSubStack;
-    [HideInInspector] public int ropeId;
-}
+//
+// [Serializable]
+// public class StackAddress
+// {
+//     public int indexOfSlate;
+//     public int indexOfStack;
+//     public int indexOfSubStack;
+//     [HideInInspector] public int ropeId;
+// }

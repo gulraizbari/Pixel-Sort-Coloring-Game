@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using PixelSort.Feature.GridGeneration;
 using Sablo.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Carrier : MonoBehaviour, ICarrier
 {
-    public List<Brick> carrierBrickList;
+    public List<Chip> carrierBrickList;
     public List<Transform> brickPositions;
     [HideInInspector] public List<Vector3> brickCellPositions;
     public int SpawnOrder;
@@ -25,8 +26,9 @@ public class Carrier : MonoBehaviour, ICarrier
     public int bricksAddCount;
     public bool lastCarrier;
     public bool isMoving = false;
-    public ISlateBuilder SlateBuilderInterface;
-    public IlevelManager LevelManagerInterface;
+    // public ISlateBuilder SlateBuilderInterface;
+    public IGridGenerator GridGeneratorHandler;
+    public ILevelManager LevelManagerInterface;
 
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
@@ -62,12 +64,12 @@ public class Carrier : MonoBehaviour, ICarrier
         }
     }
 
-    public IEnumerator ResetBrickPos(int from, List<Brick> selectedBricks)
+    public IEnumerator ResetBrickPos(int from, List<Chip> selectedBricks)
     {
         var curCarrier = TapController.Instance.curCarrierHandler;
         var curCarrierPosList = TapController.Instance.curCarrierHandler.GetBrickPositionList();
 
-        var bricksToMove = new List<Brick>(selectedBricks);
+        var bricksToMove = new List<Chip>(selectedBricks);
         var lastBrickIndex = bricksToMove.Count - 1;
         var lastBrick = bricksToMove[lastBrickIndex];
 
@@ -91,11 +93,11 @@ public class Carrier : MonoBehaviour, ICarrier
         }
     }
 
-    private void ActionCallBack(ICarrier curCarrier, Brick brick)
+    private void ActionCallBack(ICarrier curCarrier, Chip chip)
     {
         curCarrier.IncreaseBrickCount();
-        brick.transform.SetParent(RollerInterface.GetRollerTransform());
-        var brickMaterial = brick.brickRenderer.material;
+        chip.transform.SetParent(RollerInterface.GetRollerTransform());
+        var brickMaterial = chip.brickRenderer.material;
         var brickTexture = RollerInterface.GetNewBrickTexture();
         brickMaterial.mainTexture = brickTexture;
         AudioManager.instance.ThrowSound();
@@ -153,7 +155,7 @@ public class Carrier : MonoBehaviour, ICarrier
     private void MoveBrickFromPocketToCarrier()
     {
         var color = TapController.Instance.curCarrierColor;
-        var brickToRem = new List<Brick>();
+        var brickToRem = new List<Chip>();
         TrayInterface.MoveBricksToCurCarrier(color, TapController.Instance.curCarrierHandler, brickToRem);
     }
 
@@ -175,7 +177,7 @@ public class Carrier : MonoBehaviour, ICarrier
                 DOVirtual.DelayedCall(0.2f, () =>
                 {
                     LevelManagerInterface.ReloadLevel();
-                    SlateBuilderInterface.ReInitialize();
+                    GridGeneratorHandler.ReInitialize();
                 });
             }
         }
@@ -259,7 +261,7 @@ public class Carrier : MonoBehaviour, ICarrier
         return bricksAddCount;
     }
 
-    List<Brick> ICarrier.GetCarrierBricks()
+    List<Chip> ICarrier.GetCarrierBricks()
     {
         return carrierBrickList;
     }
@@ -270,7 +272,7 @@ public class Carrier : MonoBehaviour, ICarrier
     }
 
 
-    void ICarrier.AddBricksToCarrier(List<Brick> selectedBricks, Action callBack)
+    void ICarrier.AddBricksToCarrier(List<Chip> selectedBricks, Action callBack)
     {
         for (var i = 0; i < selectedBricks.Count; i++)
         {

@@ -6,7 +6,7 @@ using UnityEngine;
 public interface ICarrier
 {
     List<Vector3> GetBrickPositionList();
-    void AddBricksToCarrier(List<Brick> selectedBricks,Action callBack);
+    void AddBricksToCarrier(List<Chip> selectedBricks,Action callBack);
 
     Transform GetCarrierTransform();
 
@@ -15,12 +15,12 @@ public interface ICarrier
     int GetCarrierCount();
 
     int GetMaxSize();
-    IEnumerator ResetBrickPos(int from,List<Brick> selectedBricks);
+    IEnumerator ResetBrickPos(int from,List<Chip> selectedBricks);
 
      void IncreaseBrickCount();
      int GetBrickCount();
 
-    List<Brick> GetCarrierBricks();
+    List<Chip> GetCarrierBricks();
 
     bool IsCarrierMoving();
 

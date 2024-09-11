@@ -12,7 +12,7 @@ public class Tray : BaseGameplayModule, ITray
     [SerializeField] private LevelData curLevelData;
     [SerializeField] private float moveBricksSpeed = 0.5f;
     
-    public IlevelManager LevelManagerHandler { get; set; }
+    public ILevelManager LevelManagerHandler { get; set; }
 
     public override void Initialize()
     {
@@ -36,7 +36,7 @@ public class Tray : BaseGameplayModule, ITray
         return pocketList[0].pocketCell;
     }
 
-    public void AddBricksToPocket(List<Brick> selectedBricks, BrickColor selectedStackColor)
+    public void AddBricksToPocket(List<Chip> selectedBricks, BrickColor selectedStackColor)
     {
         var similarBrick = FindBrickByType(pocketList[0].pocBrickList, selectedStackColor);
         if (similarBrick != null)
@@ -50,17 +50,17 @@ public class Tray : BaseGameplayModule, ITray
         }
     }
 
-    Brick FindBrickByType(List<Brick> brickList, BrickColor color)
+    Chip FindBrickByType(List<Chip> brickList, BrickColor color)
     {
         return brickList.LastOrDefault(brick => brick.brickColor == color);
     }
 
-    List<Brick> ITray.GetPocketBrickList()
+    List<Chip> ITray.GetPocketBrickList()
     {
         return pocketList[0].pocBrickList;
     }
     
-    public void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler, List<Brick> bricksToMov)
+    public void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler, List<Chip> bricksToMov)
     {
         var tapInstance = TapController.Instance;
         var posList = curCarrierHandler.GetBrickPositionList();
@@ -72,7 +72,7 @@ public class Tray : BaseGameplayModule, ITray
             var carrierCount = curCarrierHandler.GetCarrierCount();
             pocket.isFull = false;
             var aLlBrickOfCarrierColor = pocket.pocBrickList.FindAll(brick => brick.brickColor == carrierColor);
-            var bricksToMove = new List<Brick>();
+            var bricksToMove = new List<Chip>();
 
             if (myCarrierCapacity > 0)
             {
@@ -94,12 +94,12 @@ public class Tray : BaseGameplayModule, ITray
         }
     }
 
-    public List<Brick> FindBricksOfCarrierColor(ICarrier curCarrierHandler, BrickColor carrierColor)
+    public List<Chip> FindBricksOfCarrierColor(ICarrier curCarrierHandler, BrickColor carrierColor)
     {
         var myCarrierCapacity = curCarrierHandler.CarrierCapacity();
         var pocket = pocketList[0];
         var aLlBrickOfCarrierColor = pocket.pocBrickList.FindAll(brick => brick.brickColor == carrierColor);
-        var bricksToMove = new List<Brick>();
+        var bricksToMove = new List<Chip>();
 
         if (myCarrierCapacity > 0)
         {
@@ -134,9 +134,9 @@ public class Tray : BaseGameplayModule, ITray
         return pocketList[0].pocBrickList.Count;
     }
 
-    private void MoveBrickOneByOne(List<Brick> bricksToMove, int carrierCapacity, int carrierCount, List<Vector3> posList, Pocket pocket)
+    private void MoveBrickOneByOne(List<Chip> bricksToMove, int carrierCapacity, int carrierCount, List<Vector3> posList, Pocket pocket)
     {
-        var selBricksToMove = new List<Brick>(bricksToMove);
+        var selBricksToMove = new List<Chip>(bricksToMove);
         var tapInstance = TapController.Instance;
         var carrier = tapInstance.GetPreviousCarrier(tapInstance.theCurCarrier) as ICarrier;
         carrier.SetOffMoving();
@@ -145,7 +145,7 @@ public class Tray : BaseGameplayModule, ITray
         StartCoroutine(MoveAllBricks(selBricksToMove, lastBrick, carrierCapacity, tapInstance.curCarrierHandler, pocket));
     }
 
-    private IEnumerator MoveAllBricks(List<Brick> bricksToMove, Brick lastBrick, int carrierCapacity, ICarrier curCarrier, Pocket pocket)
+    private IEnumerator MoveAllBricks(List<Chip> bricksToMove, Chip lastChip, int carrierCapacity, ICarrier curCarrier, Pocket pocket)
     {
         for (var index = 0; index < bricksToMove.Count; index++)
         {
@@ -153,7 +153,7 @@ public class Tray : BaseGameplayModule, ITray
             {
                 var brick = bricksToMove[index];
                 var indexOfBrick = curCarrier.GetCarrierBricks().IndexOf(brick);
-                brick.MoveToTargetCellPosByTray(indexOfBrick, brick == lastBrick
+                brick.MoveToTargetCellPosByTray(indexOfBrick, brick == lastChip
                         ? () =>
                         {
                             curCarrier.IncreaseBrickCount();
@@ -182,12 +182,12 @@ public class Tray : BaseGameplayModule, ITray
         return pocketList[0].IsGameFailed(nextCarrierColor);
     }
 
-    public List<Brick> MoveBrickFromPocketToStack(Vector3 topBrick, float offset)
+    public List<Chip> MoveBrickFromPocketToStack(Vector3 topBrick, float offset)
     {
         return pocketList[0].MoveBricksBackToStack(topBrick, offset);
     }
 
-    public void RemoveBrickFromPocketByTray(List<Brick> bricksToRemove, int startPoint)
+    public void RemoveBrickFromPocketByTray(List<Chip> bricksToRemove, int startPoint)
     {
         pocketList[0].RemoveBrickFromPocket(bricksToRemove, startPoint);
     }

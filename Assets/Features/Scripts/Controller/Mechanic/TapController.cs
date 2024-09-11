@@ -5,15 +5,16 @@ using DG.Tweening;
 using Sablo.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TapController : MonoBehaviour
 {
     [SerializeField] private float brickYOffset = 0.09f;
-    [SerializeField] private Pad lastSelectedPad;
+    [FormerlySerializedAs("lastSelectedPad")] [SerializeField] private Stack lastSelectedStack;
     [SerializeField] private List<Carrier> carriersList;
     [SerializeField] private int noOfCarriersPass;
     public static TapController Instance;
-    public List<Brick> _selectedStack = new List<Brick>();
+    public List<Chip> _selectedStack = new List<Chip>();
     public BrickColor curCarrierColor = BrickColor.None;
     [ShowInInspector] public ICarrier curCarrierHandler;
     public Carrier theCurCarrier;
@@ -36,10 +37,10 @@ public class TapController : MonoBehaviour
         carriersList = RollerHandler.GetCarrierList();
     }
 
-    public void AddBricksToSelectedStack(Brick brick, Pad selectedPad)
+    public void AddBricksToSelectedStack(Chip chip, Stack selectedStack)
     {
-        _selectedStack.Add(brick);
-        lastSelectedPad = selectedPad;
+        _selectedStack.Add(chip);
+        lastSelectedStack = selectedStack;
     }
 
     private IEnumerator currentCoroutine;
@@ -63,9 +64,9 @@ public class TapController : MonoBehaviour
                         // Determine how many bricks can be added to the carrier
                         var bricksToAddToCarrier = Math.Min(_selectedStack.Count, availableCapacity);
                         // Bricks that will be moved to the carrier
-                        var bricksForCarrier = new List<Brick>();
+                        var bricksForCarrier = new List<Chip>();
                         // Bricks that will remain and be moved to the pocket
-                        var bricksForPocket = new List<Brick>();
+                        var bricksForPocket = new List<Chip>();
 
                         for (var i = 0; i < _selectedStack.Count; i++)
                         {
@@ -106,12 +107,12 @@ public class TapController : MonoBehaviour
         else
         {
             _selectedStack.Reverse(); // stack is reversed so that it added to stack in seq
-            lastSelectedPad.AddBrickBackToStack(_selectedStack);
+            lastSelectedStack.AddBrickBackToStack(_selectedStack);
             _selectedStack.Clear();
         }
     }
 
-    private void MoveRemainingBricksToPocket(List<Brick> bricksForPocket)
+    private void MoveRemainingBricksToPocket(List<Chip> bricksForPocket)
     {
         var currentPocketCount = TrayHandler.GetPocketCount();
         var maxPocketCapacity = TrayHandler.GetMaxSize();
@@ -128,7 +129,7 @@ public class TapController : MonoBehaviour
                 var bricksToAddBackToPad = bricksForPocket.GetRange(bricksToAddToPocket, bricksForPocket.Count - bricksToAddToPocket);
                 TrayHandler.AddBricksToPocket(bricksToAddIntoPocket, selectedStackColor);
                 bricksToAddBackToPad.Reverse(); // stack is reversed so that it added to stack in seq
-                lastSelectedPad.AddBrickBackToStack(bricksToAddBackToPad);
+                lastSelectedStack.AddBrickBackToStack(bricksToAddBackToPad);
                 bricksForPocket.Clear();
             }
             else
@@ -142,7 +143,7 @@ public class TapController : MonoBehaviour
         else
         {
             bricksForPocket.Reverse();
-            lastSelectedPad.AddBrickBackToStack(bricksForPocket);
+            lastSelectedStack.AddBrickBackToStack(bricksForPocket);
             bricksForPocket.Clear();
         }
 
@@ -154,7 +155,7 @@ public class TapController : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveRemainingBricksToPocketWithDelay(List<Brick> bricksForPocket)
+    private IEnumerator MoveRemainingBricksToPocketWithDelay(List<Chip> bricksForPocket)
     {
         yield return new WaitForSeconds(0.15f);
         MoveRemainingBricksToPocket(bricksForPocket);
@@ -198,7 +199,7 @@ public class TapController : MonoBehaviour
     #region MoveBrickMethods
 
     // Move To Carrier
-    public void MoveBricksToCarrier(int indexToMoveTowards, int startMovPos, List<Brick> brickListToRemBricks, List<Vector3> targetPosList, Action callBack)
+    public void MoveBricksToCarrier(int indexToMoveTowards, int startMovPos, List<Chip> brickListToRemBricks, List<Vector3> targetPosList, Action callBack)
     {
         var targetPos = targetPosList[startMovPos + indexToMoveTowards];
         targetPos.y += Configs.GameConfig.brickYOffset;

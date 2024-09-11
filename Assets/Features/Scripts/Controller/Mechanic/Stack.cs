@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using PixelSort.Feature.GridGeneration;
 using RopeToolkit;
 using TMPro;
 using UnityEngine;
 
-public class Pad : MonoBehaviour
+public class Stack : MonoBehaviour
 {
-    public List<Brick> bricksStack = new List<Brick>();
+    public List<Chip> bricksStack = new List<Chip>();
     private BrickColor _selectedObjType;
     public bool isSelected;
     public GameObject padBase;
@@ -19,7 +20,9 @@ public class Pad : MonoBehaviour
     public bool isSparked;
     public int questionEndIndex;
     public List<SubStack> subStacks = new List<SubStack>();
-    public ISlateBuilder SlateBuilderInterface;
+
+    public IGridGenerator GridGeneratorHandler;
+    // public ISlateBuilder SlateBuilderInterface;
 
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
@@ -151,28 +154,28 @@ public class Pad : MonoBehaviour
         if (subStacks.Count > 0 && subStacks[0].stackType == Types.BrickType.Rope)
         {
             Debug.Log($"<color=green>{subStacks[0].ropeId} : RopeId! </color>");
-            chainedSubStack = SlateBuilderInterface.GetSubStackByRopId(subStacks[0].ropeId, subStacks[0]);
+            chainedSubStack = GridGeneratorHandler.GetSubStackByRopId(subStacks[0].ropeId, subStacks[0]);
             
-            var indexOfChainedSubStack = SlateBuilderInterface.GetIndexOfSubStack(chainedSubStack);
-            chainedStackAddress = SlateBuilderInterface.GetSubStackAddressByIndex(indexOfChainedSubStack);
+            var indexOfChainedSubStack = GridGeneratorHandler.GetIndexOfSubStack(chainedSubStack);
+            chainedStackAddress = GridGeneratorHandler.GetSubStackAddressByIndex(indexOfChainedSubStack);
 
             // logic to Check if both chained SubStack is at top ? call the move fn : do nothing
-            Pad padWithChainedRope = SlateBuilderInterface.GetStackContainingSubStackWithEqualRopId(chainedStackAddress.indexOfSlate, chainedStackAddress.indexOfStack);
-            var rope = SlateBuilderInterface.GetRopeHandlerByRopeId(subStacks[0].ropeId);
+            Stack stackWithChainedRope = GridGeneratorHandler.GetStackContainingSubStackWithEqualRopId(chainedStackAddress.indexOfSlate, chainedStackAddress.indexOfStack);
+            var rope = GridGeneratorHandler.GetRopeHandlerByRopeId(subStacks[0].ropeId);
             Rope theRope = null;
             if (rope.TryGetComponent(out Rope myRope))
                 theRope = myRope;
-            var ropeOriginalMaterial = SlateBuilderInterface.GetRopeMaterial;
+            var ropeOriginalMaterial = GridGeneratorHandler.GetRopeMaterial;
             
-            if (padWithChainedRope)
+            if (stackWithChainedRope)
             {
-                Debug.Log($"<color=red>{padWithChainedRope.subStacks[0].myBrick.brickColor} : Is not null </color>");
-                if (padWithChainedRope.subStacks.IndexOf(chainedSubStack) == 0) // chained subStack is at top
+                Debug.Log($"<color=red>{stackWithChainedRope.subStacks[0].myChip.brickColor} : Is not null </color>");
+                if (stackWithChainedRope.subStacks.IndexOf(chainedSubStack) == 0) // chained subStack is at top
                 {
-                    Debug.Log($"<color=red>{padWithChainedRope.subStacks.IndexOf(chainedSubStack)} : chained Is at top </color>");
-                    padWithChainedRope.subStacks[0].stackType = Types.BrickType.None;
+                    Debug.Log($"<color=red>{stackWithChainedRope.subStacks.IndexOf(chainedSubStack)} : chained Is at top </color>");
+                    stackWithChainedRope.subStacks[0].stackType = Types.BrickType.None;
                     Destroy(rope.gameObject, 0.01f);
-                    padWithChainedRope.OnClickPad();
+                    stackWithChainedRope.OnClickPad();
                     return false;
                 }
                 else
@@ -189,7 +192,7 @@ public class Pad : MonoBehaviour
                         shakeRandomness, false,
                         false).SetEase(Ease.Linear));
 
-                    mySequence.Join(padWithChainedRope.transform.DOShakePosition(duration2,
+                    mySequence.Join(stackWithChainedRope.transform.DOShakePosition(duration2,
                         new Vector3(shakeStrengthX, shakeStrengthY, shakeStrengthZ), shakeVibrato,
                         shakeRandomness, false,
                         false).SetEase(Ease.Linear));
@@ -255,7 +258,7 @@ public class Pad : MonoBehaviour
         subStacks.Reverse();
     }
 
-    public void AddBrickBackToStack(List<Brick> bricks)
+    public void AddBrickBackToStack(List<Chip> bricks)
     {
         foreach (var brick in bricks)
         {

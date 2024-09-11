@@ -5,21 +5,21 @@ public interface ITray
 {
     List<Transform> GetPosListOfPocketWithEmptySpace();
 
-    void AddBricksToPocket(List<Brick> selectedBricks,BrickColor selectedStackColor);
+    void AddBricksToPocket(List<Chip> selectedBricks,BrickColor selectedStackColor);
 
     int GetMaxSize();
-    void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler,List<Brick> bricksToMov);
+    void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler,List<Chip> bricksToMov);
 
     int GetPocketCount();
 
     bool CheckIfGameFails(BrickColor nextCarrierColor);
 
-    List<Brick> MoveBrickFromPocketToStack(Vector3 topBrick, float offset);
+    List<Chip> MoveBrickFromPocketToStack(Vector3 topBrick, float offset);
 
-    List<Brick> GetPocketBrickList();
+    List<Chip> GetPocketBrickList();
 
-    public void RemoveBrickFromPocketByTray(List<Brick> bricksToRemove, int startPoint);
+    public void RemoveBrickFromPocketByTray(List<Chip> bricksToRemove, int startPoint);
 
-    List<Brick> FindBricksOfCarrierColor(ICarrier curCarrierHandler, BrickColor carrierColor);
+    List<Chip> FindBricksOfCarrierColor(ICarrier curCarrierHandler, BrickColor carrierColor);
 
 }
