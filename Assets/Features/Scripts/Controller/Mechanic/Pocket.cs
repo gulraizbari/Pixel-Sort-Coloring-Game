@@ -39,14 +39,14 @@ public class Pocket : MonoBehaviour
 
     private void ArrangeObjects()
     {
-        for (var i = 0; i < numberOfObjects; i++)
+        for (var index = 0; index < numberOfObjects; index++)
         {
             GameObject obj;
-            if (i == 0)
+            if (index == 0)
             {
                 obj = Instantiate(edgeObj2, transform);
             }
-            else if (i == numberOfObjects - 1)
+            else if (index == numberOfObjects - 1)
             {
                 obj = Instantiate(edgeObj, transform);
             }
@@ -55,12 +55,12 @@ public class Pocket : MonoBehaviour
                 obj = Instantiate(objectPrefab, transform);
             }
             
-            var xPosition = (i - (numberOfObjects - 1) / 2.0f) * spacing;
-            if (i == 0)
+            var xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
+            if (index == 0)
             {
                 obj.transform.localPosition = new Vector3(-2.5f, 0, 0);
             } 
-            else if (i == numberOfObjects - 1)
+            else if (index == numberOfObjects - 1)
             {
                 obj.transform.localPosition = new Vector3(2.2f, 0, 0);
             }
