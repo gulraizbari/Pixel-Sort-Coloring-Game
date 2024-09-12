@@ -28,7 +28,7 @@ MonoBehaviour:
     firstStackPos: 5.7
   carrierToSpawn:
   - CarrierType: {fileID: 3987822203377927596, guid: f41349ebc732448d7a12a6529777b373, type: 3}
-  - CarrierType: {fileID: 3987822203377927596, guid: e1f274edff3b348fd879b18c9f91ead2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
   allStacks:
     stackData:
     - isMulti: 0

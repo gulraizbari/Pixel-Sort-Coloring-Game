@@ -4,7 +4,6 @@ using DG.Tweening;
 using RopeToolkit;
 using Sablo.Gameplay;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace PixelSort.Feature.GridGeneration
 {
@@ -12,24 +11,24 @@ namespace PixelSort.Feature.GridGeneration
     {
         [SerializeField] private LevelData _currentLevelData;
         [SerializeField] private LevelPositionData _currentLevelPositionData;
-        [SerializeField] private List<GameObject> _stackObj;
+        [SerializeField] private List<GameObject> _stackObj = new List<GameObject>();
         [SerializeField] private List<Slate> _newSlatesList;
-        [SerializeField] private List<SubStack> _stacksWithRope;
         [SerializeField] private List<RopeHandler> _allRopes;
-        [SerializeField] private List<StackAddress> _stackAddresses;
+        [SerializeField] private List<SubStack> _stacksWithRope = new List<SubStack>();
+        [SerializeField] private List<StackAddress> _stackAddresses = new List<StackAddress>();
         [SerializeField] private RopeHandler _ropeHandler;
         [SerializeField] private Material _ropeMaterial;
         [SerializeField] private GameObject _ropeEdge;
-        [SerializeField] private Stacks _stackDataList;
         [SerializeField] private Stack _coloredStack;
         [SerializeField] private Stack _emptyStack;
         [SerializeField] private GameObject _stackBase;
         [SerializeField] private GameObject _spark;
         [SerializeField] private Transform _emptyParent;
         [SerializeField] private Transform _stacksParent;
-        [SerializeField] private float _yOffset = 0.1f;
+        [SerializeField] private float _yOffset = 0.3f;
         [SerializeField] private float _baseOffset = 0.3f;
         private Slate _stack;
+        private Stacks _stackDataList;
         private List<Stack> _stackList = new List<Stack>();
         private List<Transform> _gridPositions = new List<Transform>();
         private int _rows;
@@ -42,9 +41,6 @@ namespace PixelSort.Feature.GridGeneration
 
         public override void Initialize()
         {
-            _stacksWithRope = new List<SubStack>();
-            _stackAddresses = new List<StackAddress>();
-            _stackObj = new List<GameObject>();
             SetLevelPositionData();
             SetLevelData();
             SpawnData(transform, _currentLevelPositionData, _emptyStack, _coloredStack);
@@ -107,8 +103,8 @@ namespace PixelSort.Feature.GridGeneration
             _columns = level.Row;
             var grid = level.Grid;
             var tileSpacing = 2f;
-            var totalWidth = _rows * tileSpacing;
-            var totalHeight = _columns * tileSpacing;
+            var totalWidth = (_rows - 1) * tileSpacing;
+            var totalHeight = (_columns - 1) * tileSpacing;
             var gridCenterOffset = new Vector3(totalWidth / 2, 0, totalHeight / 2);
 
             for (int row = 0; row < _rows; row++)
