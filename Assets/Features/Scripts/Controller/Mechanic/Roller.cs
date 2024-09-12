@@ -12,7 +12,6 @@ public class Roller : BaseGameplayModule, IRoller
     [SerializeField] private List<CarrierInfo> totalCarriersList;
     [SerializeField] private float CarrierXOffset = 2.5f;
     [SerializeField] private GameObject dustParticle;
-    public Texture newBrickTexture;
     private int materialSumOfFirstTwoLevel;
     private int preCarrierOrder = 0;
     
@@ -155,11 +154,6 @@ public class Roller : BaseGameplayModule, IRoller
     {
         spawnCarriers.Remove(carrierToRemove);
     }
-
-     Texture IRoller.GetNewBrickTexture()
-     {
-         return newBrickTexture;
-     }
      
      Transform IRoller.GetRollerTransform()
      {

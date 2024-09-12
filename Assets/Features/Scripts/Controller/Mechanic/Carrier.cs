@@ -94,9 +94,6 @@ public class Carrier : MonoBehaviour, ICarrier
     {
         curCarrier.IncreaseBrickCount();
         chip.transform.SetParent(RollerInterface.GetRollerTransform());
-        var brickMaterial = chip.brickRenderer.material;
-        var brickTexture = RollerInterface.GetNewBrickTexture();
-        brickMaterial.mainTexture = brickTexture;
         AudioManager.instance.ThrowSound();
     }
 
@@ -154,7 +151,7 @@ public class Carrier : MonoBehaviour, ICarrier
     {
         var color = TapController.Instance.curCarrierColor;
         var brickToRem = new List<Chip>();
-        TrayInterface.MoveBricksToCurCarrier(color, TapController.Instance.curCarrierHandler, brickToRem);
+        TrayInterface.MoveBricksToCurrentCarrier(color, TapController.Instance.curCarrierHandler, brickToRem);
     }
 
     public void SetInitialPositions(Transform brickTransform)

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using Sablo.Core;
 using Sirenix.OdinInspector;
@@ -18,7 +17,6 @@ public class Pocket : MonoBehaviour
     [SerializeField] private GameObject edgeObj;
     [SerializeField] private GameObject edgeObj2;
     [SerializeField] private int numberOfObjects = 10;
-    public Texture newBrickTexture;
     [SerializeField] private float spacing = 2.0f;
     [SerializeField] private int noOfBricksToMoveOnContinue = 9;
     [Header("Haptic Values")] 
@@ -56,9 +54,20 @@ public class Pocket : MonoBehaviour
             {
                 obj = Instantiate(objectPrefab, transform);
             }
-
+            
             var xPosition = (i - (numberOfObjects - 1) / 2.0f) * spacing;
-            obj.transform.localPosition = new Vector3(xPosition, 0, 0);
+            if (i == 0)
+            {
+                obj.transform.localPosition = new Vector3(-2.5f, 0, 0);
+            } 
+            else if (i == numberOfObjects - 1)
+            {
+                obj.transform.localPosition = new Vector3(2.2f, 0, 0);
+            }
+            else
+            {
+                obj.transform.localPosition = new Vector3(xPosition, 0, 0);
+            }
             pocketCell.Add(obj.transform);
         }
     }
@@ -169,39 +178,6 @@ public class Pocket : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveAllBricks(List<Chip> bricksToMove, Chip lastChip, Pocket pocket)
-    {
-        var pocListPos = pocketCell.Select(x => x.transform.position).ToList();
-        for (var index = 0; index < bricksToMove.Count; index++)
-        {
-            {
-                var brick = bricksToMove[index];
-                var indexOfBrick = pocBrickList.IndexOf(brick);
-                brick.MoveToTargetCellPosByTray(indexOfBrick, brick == lastChip
-                        ? () =>
-                        {
-                            TapController.Instance.GameFail();
-                            AudioManager.instance.ThrowSound();
-                            brick.transform.SetParent(transform);
-                            var brickMaterial = brick.brickRenderer.material;
-                            var brickTexture = newBrickTexture;
-                            brickMaterial.mainTexture = brickTexture;
-                        }
-                        : () =>
-                        {
-                            TapController.Instance.GameFail();
-                            AudioManager.instance.ThrowSound();
-                            brick.transform.SetParent(transform);
-                            var brickMaterial = brick.brickRenderer.material;
-                            var brickTexture = newBrickTexture;
-                            brickMaterial.mainTexture = brickTexture;
-                        }
-                    , pocListPos);
-                yield return new WaitForSeconds(Configs.GameConfig.delayToMoveNextBrickToCar);
-            }
-        }
-    }
-
     private IEnumerator ResetBrickPos(int from, int to)
     {
         var posList = TapController.Instance.TrayHandler.GetPosListOfPocketWithEmptySpace();
@@ -221,9 +197,6 @@ public class Pocket : MonoBehaviour
         TapController.Instance.GameFail();
         AudioManager.instance.ThrowSound();
         chip.transform.SetParent(transform);
-        var brickMaterial = chip.transform.GetChild(0).GetComponent<Renderer>().material;
-        var brickTexture = newBrickTexture;
-        brickMaterial.mainTexture = brickTexture;
     }
 
     public bool IsGameFailed(BrickColor nextCarrierColor)
@@ -231,8 +204,7 @@ public class Pocket : MonoBehaviour
         var tapInstance = TapController.Instance;
         var carrier = tapInstance.curCarrierHandler;
 
-        if (tapInstance.TrayHandler.GetPocketCount() >= MaxCapacity &&
-            carrier.GetCarrierCount() >= carrier.GetMaxSize())
+        if (tapInstance.TrayHandler.GetPocketCount() >= MaxCapacity && carrier.GetCarrierCount() >= carrier.GetMaxSize())
         {
             // Check if there's a brick with the specified color in the list
             var foundBrick = pocBrickList.Find(brick => brick.brickColor == nextCarrierColor);

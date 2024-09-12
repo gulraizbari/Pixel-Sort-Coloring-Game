@@ -8,7 +8,7 @@ public interface ITray
     void AddBricksToPocket(List<Chip> selectedBricks,BrickColor selectedStackColor);
 
     int GetMaxSize();
-    void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler,List<Chip> bricksToMov);
+    void MoveBricksToCurrentCarrier(BrickColor carrierColor, ICarrier currentCarrierHandler,List<Chip> bricksToMov);
 
     int GetPocketCount();
 

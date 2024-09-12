@@ -14,7 +14,6 @@ public class Chip : MonoBehaviour
     [SerializeField] private Material duplicateMaterial;
     public Renderer brickRenderer;
     public Texture oldBrickTexture;
-    public Texture newBrickTexture;
     public Transform ropeJoint;
 
     [Button]
