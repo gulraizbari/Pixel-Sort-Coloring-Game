@@ -54,8 +54,17 @@ public class Pocket : MonoBehaviour
             {
                 obj = Instantiate(objectPrefab, transform);
             }
+
+            float xPosition;
+            if (index == numberOfObjects - 1)
+            {
+                xPosition = (index - (numberOfObjects - 1) / 2.0f) * 0.25f;
+            }
+            else
+            {
+                xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
+            }
             
-            var xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
             obj.transform.localPosition = new Vector3(xPosition, 0, 0);
             pocketCell.Add(obj.transform);
         }
