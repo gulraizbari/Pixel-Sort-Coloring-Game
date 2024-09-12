@@ -38,21 +38,6 @@ MonoBehaviour:
         endIndex: 3
         stackType: 0
         ropeId: 0
-        myChip: {fileID: 3531308825145773157, guid: e81fe4d14485d425997ddde6c337785f, type: 3}
-        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
-      - startIndex: 3
-        endIndex: 6
-        stackType: 0
-        ropeId: 0
-        myChip: {fileID: 3531308825145773157, guid: 2a1c29f9cce2144509aa104fcccc70e6, type: 3}
-        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
-    - isMulti: 0
-      multiProducerData: []
-      chipData:
-      - startIndex: 0
-        endIndex: 3
-        stackType: 0
-        ropeId: 0
         myChip: {fileID: 3531308825145773157, guid: ba8ec8e0c2c44407dabcb69ec2252368, type: 3}
         chipImage: {fileID: -687487326, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
       - startIndex: 3

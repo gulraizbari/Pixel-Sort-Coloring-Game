@@ -23,6 +23,7 @@ namespace PixelSort.Feature.GridGeneration
         [SerializeField] private Stack _emptyStack;
         [SerializeField] private GameObject _stackBase;
         [SerializeField] private GameObject _spark;
+        [SerializeField] private Transform _trayParent;
         [SerializeField] private Transform _emptyParent;
         [SerializeField] private Transform _stacksParent;
         [SerializeField] private float _yOffset = 0.3f;
@@ -102,7 +103,7 @@ namespace PixelSort.Feature.GridGeneration
             _rows = level.Column;
             _columns = level.Row;
             var grid = level.Grid;
-            var tileSpacing = 2f;
+            var tileSpacing = 2.5f;
             var totalWidth = (_rows - 1) * tileSpacing;
             var totalHeight = (_columns - 1) * tileSpacing;
             var gridCenterOffset = new Vector3(totalWidth / 2, 0, totalHeight / 2);
@@ -185,6 +186,7 @@ namespace PixelSort.Feature.GridGeneration
             for (int i = 0; i < _stackDataList.stackData.Count; i++)
             {
                 var item = new GameObject("Stack" + i);
+                item.transform.parent = _trayParent.transform;
                 _stackObj.Add(item);
                 _stackList[i].padBase = _stackBase;
                 _stackList[i].stackId = i;

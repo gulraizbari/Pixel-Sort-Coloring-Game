@@ -14,10 +14,10 @@ public class Pocket : MonoBehaviour
     [SerializeField] private float brickDelay = 0.15f;
     [Header("SpawnCellFields")] 
     [SerializeField] private GameObject objectPrefab;
-    [SerializeField] private GameObject edgeObj;
+    [SerializeField] private GameObject edgeObj1;
     [SerializeField] private GameObject edgeObj2;
     [SerializeField] private int numberOfObjects = 10;
-    [SerializeField] private float spacing = 2.0f;
+    [SerializeField] private float spacing = 5.0f;
     [SerializeField] private int noOfBricksToMoveOnContinue = 9;
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
@@ -44,11 +44,11 @@ public class Pocket : MonoBehaviour
             GameObject obj;
             if (index == 0)
             {
-                obj = Instantiate(edgeObj2, transform);
+                obj = Instantiate(edgeObj1, transform);
             }
             else if (index == numberOfObjects - 1)
             {
-                obj = Instantiate(edgeObj, transform);
+                obj = Instantiate(edgeObj2, transform);
             }
             else
             {
@@ -56,18 +56,7 @@ public class Pocket : MonoBehaviour
             }
             
             var xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
-            if (index == 0)
-            {
-                obj.transform.localPosition = new Vector3(-2.5f, 0, 0);
-            } 
-            else if (index == numberOfObjects - 1)
-            {
-                obj.transform.localPosition = new Vector3(2.2f, 0, 0);
-            }
-            else
-            {
-                obj.transform.localPosition = new Vector3(xPosition, 0, 0);
-            }
+            obj.transform.localPosition = new Vector3(xPosition, 0, 0);
             pocketCell.Add(obj.transform);
         }
     }

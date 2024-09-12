@@ -441,10 +441,10 @@ MonoBehaviour:
   isFull: 0
   brickDelay: 0.15
   objectPrefab: {fileID: 6639477660808381500, guid: ffec13ff148ed4575bcdabb8a826694c, type: 3}
-  edgeObj: {fileID: 3395890038022655933, guid: 1cc1564f1753c4922abdd69c769e65b9, type: 3}
+  edgeObj1: {fileID: 3395890038022655933, guid: 1cc1564f1753c4922abdd69c769e65b9, type: 3}
   edgeObj2: {fileID: 6533212697944562920, guid: 669c2ed59c9cf4120ad95e49f8e5d5a2, type: 3}
   numberOfObjects: 21
-  spacing: 0.275
+  spacing: 0.29
   noOfBricksToMoveOnContinue: 9
   Amplitude: 0.5
   Frquency: 1

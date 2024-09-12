@@ -65,7 +65,7 @@ MonoBehaviour:
       Data: 3|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: isMirror
       Entry: 5
       Data: false

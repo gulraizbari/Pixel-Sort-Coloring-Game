@@ -4,14 +4,15 @@ using DG.Tweening;
 using Sablo.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Chip : MonoBehaviour
 {
-    public BrickColor brickColor;
     [PreviewField] public Sprite brickSprite;
-    [SerializeField] float brickMoveSpeed = 0.37f;
+    [SerializeField] private float brickMoveSpeed = 0.37f;
     [SerializeField] private float brickYOffset = 0.09f;
     [SerializeField] private Material duplicateMaterial;
+    public BrickColor brickColor;
     public Renderer brickRenderer;
     public Texture oldBrickTexture;
     public Transform ropeJoint;
@@ -20,6 +21,11 @@ public class Chip : MonoBehaviour
     public void ChangeMeshToBig(Mesh BigMesh)
     {
         transform.GetChild(0).GetComponent<MeshFilter>().mesh = BigMesh;
+    }
+
+    private void Start()
+    {
+        transform.rotation = Quaternion.Euler(0,  Random.Range(10f, 350f), 0);
     }
 
     public void MoveToTargetCellPos(int targetIndex, Action action, List<Vector3> posList)

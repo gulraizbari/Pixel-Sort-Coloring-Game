@@ -137,7 +137,7 @@ public class Stack : MonoBehaviour
             _indicesToRemove.Clear();
             isSelected = false;
             TurnOffBase();
-            
+            subStacks.Reverse();
             if (subStacks.Count > 0)
             {
                 subStacks.RemoveAt(0);
