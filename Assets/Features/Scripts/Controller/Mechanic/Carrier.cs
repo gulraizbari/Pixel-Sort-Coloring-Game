@@ -4,32 +4,29 @@ using System.Collections.Generic;
 using DG.Tweening;
 using PixelSort.Feature.GridGeneration;
 using Sablo.Core;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Carrier : MonoBehaviour, ICarrier
 {
     public List<Chip> carrierBrickList;
     public List<Transform> brickPositions;
-    [HideInInspector] public List<Vector3> brickCellPositions;
+    [SerializeField] private Transform lostPos;
+    [SerializeField] private float brickDelay = 0.15f;
     public int SpawnOrder;
     public BrickColor carrierColor;
     public Transform nextCarrierPos;
-    [ShowInInspector] private const int MaxCapacity = 9;
-    [SerializeField] private Transform lostPos;
+    private const int MaxCapacity = 9;
     public bool isUpFront;
     public bool isFull;
-    private Action _moveAllCarrier;
-    public IRoller RollerInterface;
-    public ITray TrayInterface;
-    [SerializeField] private float brickDelay = 0.15f;
     public int bricksAddCount;
     public bool lastCarrier;
     public bool isMoving = false;
-    // public ISlateBuilder SlateBuilderInterface;
+    [HideInInspector] public List<Vector3> brickCellPositions;
+    private Action _moveAllCarrier;
     public IGridGenerator GridGeneratorHandler;
     public ILevelManager LevelManagerInterface;
-
+    public IRoller RollerInterface;
+    public ITray TrayInterface;
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
     [SerializeField] private float Frquency = 1f; 
@@ -97,9 +94,6 @@ public class Carrier : MonoBehaviour, ICarrier
     {
         curCarrier.IncreaseBrickCount();
         chip.transform.SetParent(RollerInterface.GetRollerTransform());
-        var brickMaterial = chip.brickRenderer.material;
-        var brickTexture = RollerInterface.GetNewBrickTexture();
-        brickMaterial.mainTexture = brickTexture;
         AudioManager.instance.ThrowSound();
     }
 
@@ -140,7 +134,8 @@ public class Carrier : MonoBehaviour, ICarrier
         yield return new WaitUntil(() => allBricksReached);
         TapController.Instance.IncreaseNumberOfCarriersPass();
         ReInitializeSlateBuilder();
-        carrier.GetCarrierTransform().DOMove(lostPos.position, 0.5f).SetEase(Ease.Linear).OnStart(() => isMoving = true)
+        carrier.GetCarrierTransform().DOMove(lostPos.position, 0.5f).SetEase(Ease.Linear)
+            .OnStart(() => isMoving = true)
             .OnComplete(MoveBrickFromPocketToCarrier);
         RollerInterface.MoveAllCarrierToNextOne();
     }
@@ -156,7 +151,7 @@ public class Carrier : MonoBehaviour, ICarrier
     {
         var color = TapController.Instance.curCarrierColor;
         var brickToRem = new List<Chip>();
-        TrayInterface.MoveBricksToCurCarrier(color, TapController.Instance.curCarrierHandler, brickToRem);
+        TrayInterface.MoveBricksToCurrentCarrier(color, TapController.Instance.curCarrierHandler, brickToRem);
     }
 
     public void SetInitialPositions(Transform brickTransform)

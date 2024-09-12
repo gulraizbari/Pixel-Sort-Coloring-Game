@@ -9,44 +9,42 @@ namespace PixelSort.Feature.GridGeneration
 {
     public class GridGenerator : BaseGameplayModule, IGridGenerator
     {
-        [SerializeField] private Slate _stack;
-        [SerializeField] private LevelData curLevelData;
-        [SerializeField] private LevelPositionData curLevelPositionData;
-        [SerializeField] private List<Slate> newSlatesList;
-        [SerializeField] float horizontalOffset = 1.27f;
-        [SerializeField] float verticalOffset = 3.5f;
-        [SerializeField] private float firstRowZPos = 0;
-        [SerializeField] private RopeHandler theRopeHandler;
-        [SerializeField] private List<SubStack> stacksWithRope = new List<SubStack>();
-        [SerializeField] private List<StackAddress> stackAddresses = new List<StackAddress>();
-        [SerializeField] private Material ropeMaterial;
-        [SerializeField] private List<RopeHandler> allRopes;
-        [SerializeField] private GameObject ropeEdge;
-        [SerializeField] private Stacks stackDataList;
-        [SerializeField] private Stack coloredStack;
-        [SerializeField] private Stack emptyStack;
+        [SerializeField] private LevelData _currentLevelData;
+        [SerializeField] private LevelPositionData _currentLevelPositionData;
         [SerializeField] private List<GameObject> _stackObj = new List<GameObject>();
-        [SerializeField] private GameObject stackBase;
-        [SerializeField] private GameObject spark;
-        [SerializeField] private Transform emptyParent;
-        [SerializeField] private Transform stacksParent;
-        public List<Stack> _stackList = new List<Stack>();
-        private List<Transform> gridPositions = new List<Transform>();
-
-        private int rows = 0;
-        private int columns = 0;
-        private int slateIndex;
-        private int padIndex;
-        public float yOffset = 0.1f;
-        public float baseOffset = 0.3f;
+        [SerializeField] private List<Slate> _newSlatesList;
+        [SerializeField] private List<RopeHandler> _allRopes;
+        [SerializeField] private List<SubStack> _stacksWithRope = new List<SubStack>();
+        [SerializeField] private List<StackAddress> _stackAddresses = new List<StackAddress>();
+        [SerializeField] private RopeHandler _ropeHandler;
+        [SerializeField] private Material _ropeMaterial;
+        [SerializeField] private GameObject _ropeEdge;
+        [SerializeField] private Stack _coloredStack;
+        [SerializeField] private Stack _emptyStack;
+        [SerializeField] private GameObject _stackBase;
+        [SerializeField] private GameObject _spark;
+        [SerializeField] private Transform _trayParent;
+        [SerializeField] private Transform _emptyParent;
+        [SerializeField] private Transform _stacksParent;
+        [SerializeField] private float _yOffset = 0.3f;
+        [SerializeField] private float _baseOffset = 0.3f;
+        private Slate _stack;
+        private Stacks _stackDataList;
+        private List<Stack> _stackList = new List<Stack>();
+        private List<Transform> _gridPositions = new List<Transform>();
+        private int _rows;
+        private int _columns;
+        private int _stackIndex;
+        private int _slateIndex;
         public ILevelManager LevelManagerHandler { get; set; }
-        public Material GetRopeMaterial => ropeMaterial;
+        
+        public Material GetRopeMaterial => _ropeMaterial;
 
         public override void Initialize()
         {
             SetLevelPositionData();
             SetLevelData();
-            SpawnData(transform, curLevelPositionData, emptyStack, coloredStack);
+            SpawnData(transform, _currentLevelPositionData, _emptyStack, _coloredStack);
             SortStackByRope();
             SpawnMultipleRopes();
             SetParent();
@@ -57,14 +55,14 @@ namespace PixelSort.Feature.GridGeneration
 
         void IGridGenerator.ReInitialize()
         {
-            newSlatesList.ForEach(x => x.gameObject.SetActive(false));
-            newSlatesList.Clear();
+            _newSlatesList.ForEach(x => x.gameObject.SetActive(false));
+            _newSlatesList.Clear();
             SetLevelPositionData();
             SetLevelData();
-            stacksWithRope.Clear();
-            allRopes.Clear();
-            stackAddresses.Clear();
-            SpawnData(transform, curLevelPositionData, emptyStack, coloredStack);
+            _stacksWithRope.Clear();
+            _allRopes.Clear();
+            _stackAddresses.Clear();
+            SpawnData(transform, _currentLevelPositionData, _emptyStack, _coloredStack);
             SortStackByRope();
             SpawnMultipleRopes();
             SetParent();
@@ -75,44 +73,44 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SetLevelData()
         {
-            curLevelData = LevelManagerHandler.GetCurrentLevel;
-            stackDataList = curLevelData.allStacks;
+            _currentLevelData = LevelManagerHandler.GetCurrentLevel;
+            _stackDataList = _currentLevelData.allStacks;
         }
 
         private void SetLevelPositionData()
         {
-            curLevelPositionData = LevelManagerHandler.GetCurrentPositionLevel;
+            _currentLevelPositionData = LevelManagerHandler.GetCurrentPositionLevel;
         }
 
         public void OnLevelResume()
         {
             var minStack = FindPadWithLeastBrickCount();
-            var isMinStackEmpty = minStack.bricksStack.Count == 0;
-            var lastBrickIndex = minStack.bricksStack.Count - 1;
+            var isMinStackEmpty = minStack.chipsStack.Count == 0;
+            var lastBrickIndex = minStack.chipsStack.Count - 1;
             var basePos = minStack.padBase.transform.position;
             var lastTwelve = TapController.Instance.TrayHandler.MoveBrickFromPocketToStack(
-                minStack.bricksStack.Count > 0 ? minStack.bricksStack[lastBrickIndex].transform.position : basePos,
+                minStack.chipsStack.Count > 0 ? minStack.chipsStack[lastBrickIndex].transform.position : basePos,
                 0.32f);
-            lastTwelve.ForEach(brick => newSlatesList[slateIndex]._padList[padIndex].bricksStack.Add(brick));
+            lastTwelve.ForEach(brick => _newSlatesList[_slateIndex]._padList[_stackIndex].chipsStack.Add(brick));
             if (!isMinStackEmpty)
             {
-                newSlatesList[slateIndex].UpdateColliderLength(minStack);
+                _newSlatesList[_slateIndex].UpdateColliderLength(minStack);
             }
         }
 
         private void SpawnData(Transform parentObject, LevelPositionData level, Stack emptyStack, Stack coloredStack)
         {
-            rows = level.Column;
-            columns = level.Row;
+            _rows = level.Column;
+            _columns = level.Row;
             var grid = level.Grid;
-            var tileSpacing = 2f;
-            var totalWidth = rows * tileSpacing;
-            var totalHeight = columns * tileSpacing;
+            var tileSpacing = 2.5f;
+            var totalWidth = (_rows - 1) * tileSpacing;
+            var totalHeight = (_columns - 1) * tileSpacing;
             var gridCenterOffset = new Vector3(totalWidth / 2, 0, totalHeight / 2);
 
-            for (int row = 0; row < rows; row++)
+            for (int row = 0; row < _rows; row++)
             {
-                for (int col = 0; col < columns; col++)
+                for (int col = 0; col < _columns; col++)
                 {
                     // var cellData = grid[row, col];
                     var tilePosition = new Vector3(row * tileSpacing, 0, (level.Column - 1 - col) * tileSpacing) - gridCenterOffset + parentObject.transform.position;
@@ -120,12 +118,12 @@ namespace PixelSort.Feature.GridGeneration
                     {
                         case TileType.Empty:
                             Debug.LogError("No Stack here");
-                            SpawnNewStack(emptyStack, emptyParent, false, tilePosition, row, col);
+                            SpawnNewStack(emptyStack, _emptyParent, false, tilePosition, row, col);
                             break;
                         case TileType.Stack:
-                            var stack = SpawnNewStack(coloredStack, stacksParent, true, tilePosition, row, col);
+                            var stack = SpawnNewStack(coloredStack, _stacksParent, true, tilePosition, row, col);
                             _stackList.Add(stack);
-                            gridPositions.Add(stack.transform);
+                            _gridPositions.Add(stack.transform);
                             break;
                     }
 
@@ -142,8 +140,7 @@ namespace PixelSort.Feature.GridGeneration
             }
         }
 
-        private Stack SpawnNewStack(Stack chip, Transform parentObject, bool isTileOn, Vector3 tilePosition, int row,
-            int col)
+        private Stack SpawnNewStack(Stack chip, Transform parentObject, bool isTileOn, Vector3 tilePosition, int row, int col)
         {
             var stack = Instantiate(chip, parentObject.transform);
             stack.transform.position = tilePosition;
@@ -159,12 +156,12 @@ namespace PixelSort.Feature.GridGeneration
                 var pileCopy = GetCopyOfOriginalPile(pile);
                 for (int index = pile.startIndex; index <= pile.endIndex; index++)
                 {
-                    var indexOfStack = stackDataList.stackData.IndexOf(currentStackData);
+                    var indexOfStack = _stackDataList.stackData.IndexOf(currentStackData);
                     var chip = Instantiate(pile.myChip, _stackObj[indexOfStack].transform);
-                    _stackList[indexOfStack].bricksStack.Add(chip);
-                    position.y = baseOffset;
+                    _stackList[indexOfStack].chipsStack.Add(chip);
+                    position.y = _baseOffset;
                     chip.transform.position = position;
-                    baseOffset += yOffset;
+                    _baseOffset += _yOffset;
                 }
 
                 if (myStack != null)
@@ -176,26 +173,27 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SpawnStacks()
         {
-            for (var index = 0; index < curLevelData.allStacks.stackData.Count; index++)
+            for (var index = 0; index < _currentLevelData.allStacks.stackData.Count; index++)
             {
-                var stack = curLevelData.allStacks.stackData[index];
-                LoadStack(stack, index < _stackList.Count ? _stackList[index] : null, gridPositions[index].position);
-                baseOffset = 0.3f;
+                var stack = _currentLevelData.allStacks.stackData[index];
+                LoadStack(stack, index < _stackList.Count ? _stackList[index] : null, _gridPositions[index].position);
+                _baseOffset = 0.3f;
             }
         }
 
         private void SpawnStack()
         {
-            for (int i = 0; i < stackDataList.stackData.Count; i++)
+            for (int i = 0; i < _stackDataList.stackData.Count; i++)
             {
                 var item = new GameObject("Stack" + i);
+                item.transform.parent = _trayParent.transform;
                 _stackObj.Add(item);
-                _stackList[i].padBase = stackBase;
+                _stackList[i].padBase = _stackBase;
                 _stackList[i].stackId = i;
-                _stackList[i].isMultiProducer = stackDataList.stackData[i].isMulti;
-                _stackList[i].sparkParticle = spark;
+                _stackList[i].isMultiProducer = _stackDataList.stackData[i].isMulti;
+                _stackList[i].sparkParticle = _spark;
                 _stackList[i].GridGeneratorHandler = this;
-                stackDataList.stackData[i].multiProducerData.ForEach(x => _stackList[i].multiProducerDataList.Add(GetCopyOfOriginalPile(x)));
+                _stackDataList.stackData[i].multiProducerData.ForEach(x => _stackList[i].multiProducerDataList.Add(GetCopyOfOriginalPile(x)));
             }
         }
 
@@ -216,32 +214,31 @@ namespace PixelSort.Feature.GridGeneration
             Stack stackWithMinBrickCount = null;
             var minBrickCount = int.MaxValue;
 
-            for (int i = 0; i < newSlatesList.Count; i++)
+            for (int i = 0; i < _newSlatesList.Count; i++)
             {
-                for (int j = 0; j < newSlatesList[i]._padList.Count; j++)
+                for (int j = 0; j < _newSlatesList[i]._padList.Count; j++)
                 {
-                    var currentPad = newSlatesList[i]._padList[j];
-                    if (currentPad.bricksStack.Count == 0)
+                    var currentPad = _newSlatesList[i]._padList[j];
+                    if (currentPad.chipsStack.Count == 0)
                     {
-                        if (currentPad.bricksStack.Count < minBrickCount)
+                        if (currentPad.chipsStack.Count < minBrickCount)
                         {
                             stackWithMinBrickCount = currentPad;
-                            minBrickCount = currentPad.bricksStack.Count;
-                            padIndex = j;
-                            slateIndex = i;
+                            minBrickCount = currentPad.chipsStack.Count;
+                            _stackIndex = j;
+                            _slateIndex = i;
                             stackWithMinBrickCount.isSparked = false;
                             stackWithMinBrickCount.padBase.SetActive(true); // activating base again
                         }
                     }
-                    else if (currentPad.bricksStack.Count > 0 &&
-                             currentPad.bricksStack[0].brickColor != BrickColor.EmptyBrick)
+                    else if (currentPad.chipsStack.Count > 0 && currentPad.chipsStack[0].brickColor != BrickColor.EmptyBrick)
                     {
-                        if (currentPad.bricksStack.Count < minBrickCount)
+                        if (currentPad.chipsStack.Count < minBrickCount)
                         {
                             stackWithMinBrickCount = currentPad;
-                            minBrickCount = currentPad.bricksStack.Count;
-                            padIndex = j;
-                            slateIndex = i;
+                            minBrickCount = currentPad.chipsStack.Count;
+                            _stackIndex = j;
+                            _slateIndex = i;
                         }
                     }
                 }
@@ -252,7 +249,7 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SetParent()
         {
-            foreach (var slate in newSlatesList)
+            foreach (var slate in _newSlatesList)
             {
                 slate.transform.SetParent(transform);
             }
@@ -262,36 +259,36 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SpawnRope(Stack stack1, int brickIndex1, Stack stack2, int brickIndex2, int ropeId)
         {
-            var newRopeHandler = Instantiate(theRopeHandler);
-            allRopes.Add(newRopeHandler);
+            var newRopeHandler = Instantiate(_ropeHandler);
+            _allRopes.Add(newRopeHandler);
             newRopeHandler.ropeId = ropeId;
-            var edgePos1 = stack1.bricksStack[brickIndex1].transform.position;
-            var edgePos2 = stack2.bricksStack[brickIndex2].transform.position;
+            var edgePos1 = stack1.chipsStack[brickIndex1].transform.position;
+            var edgePos2 = stack2.chipsStack[brickIndex2].transform.position;
             edgePos1.z -= 0.65f;
             edgePos2.z -= 0.65f;
             DOVirtual.DelayedCall(1f, () =>
             {
-                newRopeHandler.SetRope(stack1.bricksStack[brickIndex1].ropeJoint,
-                    stack2.bricksStack[brickIndex2].ropeJoint);
+                newRopeHandler.SetRope(stack1.chipsStack[brickIndex1].ropeJoint,
+                    stack2.chipsStack[brickIndex2].ropeJoint);
                 DOVirtual.DelayedCall(1f, () =>
                 {
                     SpawnRopeEdges(edgePos1, edgePos2, newRopeHandler.gameObject);
-                    newRopeHandler.GetComponent<Rope>().material = ropeMaterial;
+                    newRopeHandler.GetComponent<Rope>().material = _ropeMaterial;
                 });
             });
         }
 
         private void SpawnRopeEdges(Vector3 edgePos1, Vector3 edgePos2, GameObject rope)
         {
-            var edge1 = Instantiate(ropeEdge, rope.transform, true);
-            var edge2 = Instantiate(ropeEdge, rope.transform, true);
+            var edge1 = Instantiate(_ropeEdge, rope.transform, true);
+            var edge2 = Instantiate(_ropeEdge, rope.transform, true);
             edge1.transform.position = edgePos1;
             edge2.transform.position = edgePos2;
         }
 
         public void AddRopePilesToList(SubStack subStack)
         {
-            stacksWithRope.Add(subStack);
+            _stacksWithRope.Add(subStack);
         }
 
         void IGridGenerator.AddToStackAddress(int indexOfSlate, int indexOfStack, int indexOfSubStack, int ropeId)
@@ -301,65 +298,65 @@ namespace PixelSort.Feature.GridGeneration
                 indexOfSlate = indexOfSlate, indexOfStack = indexOfStack, indexOfSubStack = indexOfSubStack,
                 ropeId = ropeId
             };
-            stackAddresses.Add(newAddress);
+            _stackAddresses.Add(newAddress);
         }
 
         private void SpawnMultipleRopes()
         {
-            for (int i = 0; i < stacksWithRope.Count; i += 2)
+            for (int i = 0; i < _stacksWithRope.Count; i += 2)
             {
                 var nextIndex = i + 1;
-                var pad1 = newSlatesList[stackAddresses[i].indexOfSlate]._padList[stackAddresses[i].indexOfStack];
-                var pad1BrickIndex = (stacksWithRope[i].startIndex) + 1;
-                var pad2 = newSlatesList[stackAddresses[nextIndex].indexOfSlate]
-                    ._padList[stackAddresses[nextIndex].indexOfStack];
-                var pad2BrickIndex = (stacksWithRope[nextIndex].startIndex) + 1;
-                SpawnRope(pad1, pad1BrickIndex, pad2, pad2BrickIndex, stackAddresses[i].ropeId);
+                var pad1 = _newSlatesList[_stackAddresses[i].indexOfSlate]._padList[_stackAddresses[i].indexOfStack];
+                var pad1BrickIndex = (_stacksWithRope[i].startIndex) + 1;
+                var pad2 = _newSlatesList[_stackAddresses[nextIndex].indexOfSlate]
+                    ._padList[_stackAddresses[nextIndex].indexOfStack];
+                var pad2BrickIndex = (_stacksWithRope[nextIndex].startIndex) + 1;
+                SpawnRope(pad1, pad1BrickIndex, pad2, pad2BrickIndex, _stackAddresses[i].ropeId);
             }
         }
 
         private void SortStackByRope()
         {
-            stacksWithRope.Sort((x, y) => x.ropeId.CompareTo(y.ropeId));
-            stackAddresses.Sort((x, y) => x.ropeId.CompareTo(y.ropeId));
+            _stacksWithRope.Sort((x, y) => x.ropeId.CompareTo(y.ropeId));
+            _stackAddresses.Sort((x, y) => x.ropeId.CompareTo(y.ropeId));
         }
 
         SubStack IGridGenerator.GetSubStackByRopId(int existingRopId, SubStack existingSubStack)
         {
-            var similarRopIdStack = stacksWithRope.Find(x => x.ropeId == existingRopId && x != existingSubStack);
+            var similarRopIdStack = _stacksWithRope.Find(x => x.ropeId == existingRopId && x != existingSubStack);
             return similarRopIdStack;
         }
 
         int IGridGenerator.GetIndexOfSubStack(SubStack subStackToGetIndexOf)
         {
-            return stacksWithRope.IndexOf(subStackToGetIndexOf);
+            return _stacksWithRope.IndexOf(subStackToGetIndexOf);
         }
 
         StackAddress IGridGenerator.GetSubStackAddressByRopId(int existingRopId, StackAddress existingSubStackAddress)
         {
             var similarRopIdStackAddress =
-                stackAddresses.Find(x => x.ropeId == existingRopId && x != existingSubStackAddress);
+                _stackAddresses.Find(x => x.ropeId == existingRopId && x != existingSubStackAddress);
             return similarRopIdStackAddress;
         }
 
         StackAddress IGridGenerator.GetSubStackAddressByIndex(int indexOfSubStackInList)
         {
-            return stackAddresses[indexOfSubStackInList];
+            return _stackAddresses[indexOfSubStackInList];
         }
 
         Stack IGridGenerator.GetStackContainingSubStackWithEqualRopId(int indexOfSlate, int indexOfPad)
         {
-            return newSlatesList[indexOfSlate]._padList[indexOfPad];
+            return _newSlatesList[indexOfSlate]._padList[indexOfPad];
         }
 
         RopeHandler IGridGenerator.GetRopeHandlerByRopeId(int subStackRopeId)
         {
-            return allRopes.Find(x => x.ropeId == subStackRopeId);
+            return _allRopes.Find(x => x.ropeId == subStackRopeId);
         }
 
         int IGridGenerator.GetTotalNumberOfSlates()
         {
-            return curLevelData.allStacks.stackData.Count; // need to fix later
+            return _currentLevelData.allStacks.stackData.Count; // need to fix later
         }
 
         #endregion

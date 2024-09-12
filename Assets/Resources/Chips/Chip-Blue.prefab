@@ -46,14 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6eed2d2d3f94661bec48cec788e3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brickColor: 2
   brickSprite: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
   brickMoveSpeed: 0.1
   brickYOffset: 0.09
   duplicateMaterial: {fileID: 0}
+  brickColor: 2
   brickRenderer: {fileID: 3646056418394315751}
   oldBrickTexture: {fileID: 2800000, guid: c630c335a07020f428b7fdeac7fab9ca, type: 3}
-  newBrickTexture: {fileID: 2800000, guid: 166270270ec6b478895a1d180da2cf1b, type: 3}
   ropeJoint: {fileID: 6540166542864259508}
 --- !u!1 &4242364482809844824
 GameObject:

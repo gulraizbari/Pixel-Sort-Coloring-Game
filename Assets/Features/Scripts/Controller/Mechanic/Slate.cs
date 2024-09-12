@@ -71,7 +71,7 @@ public class Slate : MonoBehaviour, ISlate
     {
         foreach (var pad in _padList)
         {
-            if (pad.bricksStack[0].brickColor != BrickColor.EmptyBrick)
+            if (pad.chipsStack[0].brickColor != BrickColor.EmptyBrick)
             {
                 pad.SpawnBase(pad.isMultiProducer ? stackBaseMultiProducer : stackBase);
             }
@@ -83,11 +83,11 @@ public class Slate : MonoBehaviour, ISlate
         var intPadVal = GridGeneratorHandler.GetTotalNumberOfSlates() == 4 ? internalPaddingBwStack : internalPaddingBwStack2;
         for (int i = 0; i < _padObj.Count; i++)
         {
-            if (_padList[i].bricksStack[0].brickColor != BrickColor.EmptyBrick)
+            if (_padList[i].chipsStack[0].brickColor != BrickColor.EmptyBrick)
             {
                 var padCol = _padObj[i].AddComponent<BoxCollider>();
-                var totalSize = (yOffset * _padList[i].bricksStack.Count);
-                padCol.center = new Vector3((padXOffset + (i * intPadVal)) - intPadVal, (totalSize / 2) + 0.13f, _padList[i].bricksStack[0].transform.position.z);
+                var totalSize = (yOffset * _padList[i].chipsStack.Count);
+                padCol.center = new Vector3((padXOffset + (i * intPadVal)) - intPadVal, (totalSize / 2) + 0.13f, _padList[i].chipsStack[0].transform.position.z);
                 padCol.size = new Vector3(0.89f, totalSize, 1);
             }
         }
@@ -97,8 +97,8 @@ public class Slate : MonoBehaviour, ISlate
     {
         var intPadVal = GridGeneratorHandler.GetTotalNumberOfSlates() == 4 ? internalPaddingBwStack : internalPaddingBwStack2;
         var padCol = updatedStack.gameObject.GetComponent<BoxCollider>();
-        var totalSize = (yOffset * updatedStack.bricksStack.Count);
-        var padBrickPos = updatedStack.bricksStack[0].transform.position;
+        var totalSize = (yOffset * updatedStack.chipsStack.Count);
+        var padBrickPos = updatedStack.chipsStack[0].transform.position;
         padBrickPos.x += 0.5f;
         padCol.center = new Vector3(padBrickPos.x, (totalSize / 2) + 0.13f, padBrickPos.z);
         padCol.size = new Vector3(0.89f, totalSize, 1);
@@ -131,7 +131,7 @@ public class Slate : MonoBehaviour, ISlate
                 pos.x += indexOfStack * (intPadVal);
                 brick.transform.position = pos;
                 baseOffset += yOffset;
-                _padList[indexOfStack].bricksStack.Add(brick);
+                _padList[indexOfStack].chipsStack.Add(brick);
             }
 
             switch (pile.stackType)
@@ -147,10 +147,10 @@ public class Slate : MonoBehaviour, ISlate
                     var hidObjScale = newHiddenObj.transform.localScale;
                     hidObjScale.y *= (pile.endIndex - pile.startIndex);
                     newHiddenObj.transform.localScale = hidObjScale;
-                    var firstBrickPos = _padList[indexOfStack].bricksStack[pile.startIndex].transform.position;
+                    var firstBrickPos = _padList[indexOfStack].chipsStack[pile.startIndex].transform.position;
                     firstBrickPos.y -= 0.17f;
                     newHiddenObj.transform.position = firstBrickPos;
-                    var midBrickPos = _padList[indexOfStack].bricksStack[pile.startIndex + 1].transform.position;
+                    var midBrickPos = _padList[indexOfStack].chipsStack[pile.startIndex + 1].transform.position;
                     midBrickPos.y -= 0.05f;
                     midBrickPos.z -= 0.55f;
                     question.position = midBrickPos;
@@ -222,7 +222,7 @@ public class Slate : MonoBehaviour, ISlate
             pos.x += indexOfStack * (intPadVal);
             brick.transform.position = pos;
             baseOffset += yOffset;
-            _padList[indexOfStack].bricksStack.Add(brick);
+            _padList[indexOfStack].chipsStack.Add(brick);
             stack.InitialAnimationBrick();
         }
     }

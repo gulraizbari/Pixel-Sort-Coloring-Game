@@ -60,29 +60,29 @@ public class Tray : BaseGameplayModule, ITray
         return pocketList[0].pocBrickList;
     }
     
-    public void MoveBricksToCurCarrier(BrickColor carrierColor, ICarrier curCarrierHandler, List<Chip> bricksToMov)
+    public void MoveBricksToCurrentCarrier(BrickColor carrierColor, ICarrier currentCarrierHandler, List<Chip> bricksToMov)
     {
         var tapInstance = TapController.Instance;
-        var posList = curCarrierHandler.GetBrickPositionList();
-        var myCarrierCapacity = curCarrierHandler.CarrierCapacity();
+        var posList = currentCarrierHandler.GetBrickPositionList();
+        var myCarrierCapacity = currentCarrierHandler.CarrierCapacity();
 
         var pocket = pocketList[0];
         if (pocket.pocBrickList.Count > 0)
         {
-            var carrierCount = curCarrierHandler.GetCarrierCount();
+            var carrierCount = currentCarrierHandler.GetCarrierCount();
             pocket.isFull = false;
             var aLlBrickOfCarrierColor = pocket.pocBrickList.FindAll(brick => brick.brickColor == carrierColor);
             var bricksToMove = new List<Chip>();
 
             if (myCarrierCapacity > 0)
             {
-                bricksToMove = FindBricksOfCarrierColor(curCarrierHandler, carrierColor);
+                bricksToMove = FindBricksOfCarrierColor(currentCarrierHandler, carrierColor);
             }
 
 
             if (bricksToMove.Count > 0)
             {
-                curCarrierHandler.AddBricksToCarrier(bricksToMove, null); // adding bricks to car
+                currentCarrierHandler.AddBricksToCarrier(bricksToMove, null); // adding bricks to car
                 MoveBrickOneByOne(bricksToMove, myCarrierCapacity, carrierCount, posList, pocket);
                 pocket.RemoveBrickFromPocket(bricksToMove, bricksToMove.Count);
             }
@@ -159,17 +159,11 @@ public class Tray : BaseGameplayModule, ITray
                             curCarrier.IncreaseBrickCount();
                             brick.transform.SetParent(pocketList[0].transform);
                             TapController.Instance.curCarrierHandler.MoveAside();
-                            var brickMaterial = brick.brickRenderer.material;
-                            var brickTexture = pocketList[0].newBrickTexture;
-                            brickMaterial.mainTexture = brickTexture;
                         }
                         : () =>
                         {
                             curCarrier.IncreaseBrickCount();
                             brick.transform.SetParent(pocketList[0].transform);
-                            var brickMaterial = brick.brickRenderer.material;
-                            var brickTexture = pocketList[0].newBrickTexture;
-                            brickMaterial.mainTexture = brickTexture;
                         }
                     , curCarrier.GetBrickPositionList());
                 yield return new WaitForSeconds(Configs.GameConfig.delayToMoveNextBrickToCar);

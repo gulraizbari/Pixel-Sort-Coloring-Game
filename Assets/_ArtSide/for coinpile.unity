@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029517, g: 0.22573823, b: 0.30694664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4333,7 +4333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5290003
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4940,7 +4940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4948,11 +4948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4960,7 +4960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7225,7 +7225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2870002
+      value: -1.683
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7237,7 +7237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7245,11 +7245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7257,7 +7257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7386,7 +7386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5870001
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b283a8bb0b15fdb4b80a13eb5a8a58c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7774,7 +7774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5290003
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8308,7 +8308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5290003
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8610,7 +8610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5290003
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9002,7 +9002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5290003
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b374420eaadf1f41b15e1450e1868fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12608,6 +12608,16 @@ MonoBehaviour:
   - {fileID: 3630731821268769474}
   - {fileID: 7940043451669018887}
   - {fileID: 2785608330150770849}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 0
+  carrierColor: 1
+  nextCarrierPos: {fileID: 0}
+  isUpFront: 1
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -12618,16 +12628,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 0
-  carrierColor: 1
-  nextCarrierPos: {fileID: 0}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 1
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -13088,6 +13088,16 @@ MonoBehaviour:
   - {fileID: 5858814818366205313}
   - {fileID: 1860334568852017824}
   - {fileID: 7707071543890114345}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 27
+  carrierColor: 3
+  nextCarrierPos: {fileID: 8656264134854172018}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -13098,16 +13108,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 27
-  carrierColor: 3
-  nextCarrierPos: {fileID: 8656264134854172018}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -15280,6 +15280,16 @@ MonoBehaviour:
   - {fileID: 3140396183604883934}
   - {fileID: 3060471174789980777}
   - {fileID: 2158993108721854992}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 17
+  carrierColor: 19
+  nextCarrierPos: {fileID: 7861408037764391118}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -15290,16 +15300,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 17
-  carrierColor: 19
-  nextCarrierPos: {fileID: 7861408037764391118}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -17135,6 +17135,16 @@ MonoBehaviour:
   - {fileID: 2211943799459567229}
   - {fileID: 283031692679816312}
   - {fileID: 9028953965995781953}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 33
+  carrierColor: 2
+  nextCarrierPos: {fileID: 3209988564763393240}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -17145,16 +17155,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 33
-  carrierColor: 2
-  nextCarrierPos: {fileID: 3209988564763393240}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -21754,6 +21754,16 @@ MonoBehaviour:
   - {fileID: 3267897035045558365}
   - {fileID: 1812251643388275163}
   - {fileID: 5293567711362744429}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 28
+  carrierColor: 4
+  nextCarrierPos: {fileID: 4686101175639406794}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -21764,16 +21774,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 28
-  carrierColor: 4
-  nextCarrierPos: {fileID: 4686101175639406794}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -22060,6 +22060,16 @@ MonoBehaviour:
   - {fileID: 4172926939052827225}
   - {fileID: 8459986303482102629}
   - {fileID: 8601403616604527138}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 14
+  carrierColor: 18
+  nextCarrierPos: {fileID: 1996451737557198783}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -22070,16 +22080,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 14
-  carrierColor: 18
-  nextCarrierPos: {fileID: 1996451737557198783}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -22751,6 +22751,16 @@ MonoBehaviour:
   - {fileID: 9109981786651835025}
   - {fileID: 4318573215162032514}
   - {fileID: 6339086434537166549}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 9
+  carrierColor: 8
+  nextCarrierPos: {fileID: 8888783403903200480}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -22761,16 +22771,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 9
-  carrierColor: 8
-  nextCarrierPos: {fileID: 8888783403903200480}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -23540,6 +23540,16 @@ MonoBehaviour:
   - {fileID: 5821394665491948885}
   - {fileID: 3043018987141463938}
   - {fileID: 4185765135997353524}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 18
+  carrierColor: 5
+  nextCarrierPos: {fileID: 3443967085230866041}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -23550,16 +23560,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 18
-  carrierColor: 5
-  nextCarrierPos: {fileID: 3443967085230866041}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -26495,6 +26495,16 @@ MonoBehaviour:
   - {fileID: 1089461686085339391}
   - {fileID: 1884444301380166698}
   - {fileID: 5723036570335462238}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 12
+  carrierColor: 6
+  nextCarrierPos: {fileID: 4646225201764478251}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -26505,16 +26515,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 12
-  carrierColor: 6
-  nextCarrierPos: {fileID: 4646225201764478251}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -26567,6 +26567,16 @@ MonoBehaviour:
   - {fileID: 7638350094286829716}
   - {fileID: 4264347865889510208}
   - {fileID: 642563352113309409}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 3
+  carrierColor: 15
+  nextCarrierPos: {fileID: 9076986167807804774}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -26577,16 +26587,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 3
-  carrierColor: 15
-  nextCarrierPos: {fileID: 9076986167807804774}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -26764,6 +26764,16 @@ MonoBehaviour:
   - {fileID: 3871756059734497114}
   - {fileID: 7885353382658601012}
   - {fileID: 2333805194237212353}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 32
+  carrierColor: 12
+  nextCarrierPos: {fileID: 5307477984896856901}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -26774,16 +26784,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 32
-  carrierColor: 12
-  nextCarrierPos: {fileID: 5307477984896856901}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -26866,6 +26866,16 @@ MonoBehaviour:
   - {fileID: 4559694174602598310}
   - {fileID: 4114629105158764534}
   - {fileID: 1388762869273858918}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 10
+  carrierColor: 6
+  nextCarrierPos: {fileID: 4594619372523261627}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -26876,16 +26886,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 10
-  carrierColor: 6
-  nextCarrierPos: {fileID: 4594619372523261627}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -27099,6 +27099,16 @@ MonoBehaviour:
   - {fileID: 2916933741270027939}
   - {fileID: 6297559663661965384}
   - {fileID: 9171868413280311530}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 8
+  carrierColor: 3
+  nextCarrierPos: {fileID: 3748018057520653652}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -27109,16 +27119,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 8
-  carrierColor: 3
-  nextCarrierPos: {fileID: 3748018057520653652}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -27679,6 +27679,16 @@ MonoBehaviour:
   - {fileID: 1742193298774301997}
   - {fileID: 4131364737394795379}
   - {fileID: 3270938446118015899}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 24
+  carrierColor: 1
+  nextCarrierPos: {fileID: 1740670991018905431}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -27689,16 +27699,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 24
-  carrierColor: 1
-  nextCarrierPos: {fileID: 1740670991018905431}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -28543,6 +28543,16 @@ MonoBehaviour:
   - {fileID: 150330378053044822}
   - {fileID: 6845393078530990654}
   - {fileID: 6423176221908416397}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 19
+  carrierColor: 4
+  nextCarrierPos: {fileID: 5248846849916905575}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -28553,16 +28563,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 19
-  carrierColor: 4
-  nextCarrierPos: {fileID: 5248846849916905575}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -28979,6 +28979,16 @@ MonoBehaviour:
   - {fileID: 756306503851471889}
   - {fileID: 2030449725915430154}
   - {fileID: 6985016600008413260}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 26
+  carrierColor: 1
+  nextCarrierPos: {fileID: 6182240959847941365}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -28989,16 +28999,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 26
-  carrierColor: 1
-  nextCarrierPos: {fileID: 6182240959847941365}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -29523,6 +29523,16 @@ MonoBehaviour:
   - {fileID: 5095798265850046089}
   - {fileID: 8293204434034685685}
   - {fileID: 7932402513193761223}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 20
+  carrierColor: 12
+  nextCarrierPos: {fileID: 1906487362575126760}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -29533,16 +29543,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 20
-  carrierColor: 12
-  nextCarrierPos: {fileID: 1906487362575126760}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -29629,6 +29629,16 @@ MonoBehaviour:
   - {fileID: 7262560753827905878}
   - {fileID: 5882763254150406355}
   - {fileID: 985860487555812591}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 21
+  carrierColor: 2
+  nextCarrierPos: {fileID: 7810465664252257259}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -29639,16 +29649,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 21
-  carrierColor: 2
-  nextCarrierPos: {fileID: 7810465664252257259}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -30941,6 +30941,16 @@ MonoBehaviour:
   - {fileID: 2635679606184922561}
   - {fileID: 3325971514963399644}
   - {fileID: 7801483035057145477}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 11
+  carrierColor: 1
+  nextCarrierPos: {fileID: 3922236433572741777}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -30951,16 +30961,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 11
-  carrierColor: 1
-  nextCarrierPos: {fileID: 3922236433572741777}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -34124,6 +34124,16 @@ MonoBehaviour:
   - {fileID: 4073345177364215738}
   - {fileID: 683920509469635756}
   - {fileID: 2696958302675821292}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 15
+  carrierColor: 15
+  nextCarrierPos: {fileID: 6198632367926952176}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -34134,16 +34144,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 15
-  carrierColor: 15
-  nextCarrierPos: {fileID: 6198632367926952176}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -35004,8 +35004,6 @@ MonoBehaviour:
   - {fileID: 3646184915206901444}
   - {fileID: 1223204085003456114}
   - {fileID: 8358739189495760889}
-  CarrierXOffset: 6
-  dustParticle: {fileID: 8932541508155819781, guid: eeaa13039a855444885a20721049e52c, type: 3}
   totalCarriersList:
   - CarrierType: {fileID: 3987822203377927596, guid: 8067b47d7d526400a98d8bd963acfc27, type: 3}
   - CarrierType: {fileID: 3987822203377927596, guid: 510ed5e6f991e41a29db491e095af4ea, type: 3}
@@ -35042,6 +35040,8 @@ MonoBehaviour:
   - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
   - CarrierType: {fileID: 3987822203377927596, guid: bb87bfbec93124598ad45e6af894bab2, type: 3}
   - CarrierType: {fileID: 3987822203377927596, guid: f2d4862e91fc34a4b83503e020aa3044, type: 3}
+  CarrierXOffset: 6
+  dustParticle: {fileID: 8932541508155819781, guid: eeaa13039a855444885a20721049e52c, type: 3}
   newBrickTexture: {fileID: 2800000, guid: 166270270ec6b478895a1d180da2cf1b, type: 3}
 --- !u!4 &5554624114942528646
 Transform:
@@ -36640,6 +36640,16 @@ MonoBehaviour:
   - {fileID: 7314939213689922798}
   - {fileID: 2046482890654719488}
   - {fileID: 4787844159434239284}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 30
+  carrierColor: 4
+  nextCarrierPos: {fileID: 5653511201097097849}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -36650,16 +36660,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 30
-  carrierColor: 4
-  nextCarrierPos: {fileID: 5653511201097097849}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -37062,6 +37062,16 @@ MonoBehaviour:
   - {fileID: 8105891328951635370}
   - {fileID: 9183287736334777306}
   - {fileID: 3338973081313135239}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 5
+  carrierColor: 1
+  nextCarrierPos: {fileID: 1880202810117156531}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -37072,16 +37082,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 5
-  carrierColor: 1
-  nextCarrierPos: {fileID: 1880202810117156531}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -38309,6 +38309,16 @@ MonoBehaviour:
   - {fileID: 2191267454748327838}
   - {fileID: 2614795074150344479}
   - {fileID: 1083571538906036335}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 16
+  carrierColor: 5
+  nextCarrierPos: {fileID: 4755530597866976952}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -38319,16 +38329,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 16
-  carrierColor: 5
-  nextCarrierPos: {fileID: 4755530597866976952}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -38628,6 +38628,16 @@ MonoBehaviour:
   - {fileID: 1962961577340838403}
   - {fileID: 8907943640418327825}
   - {fileID: 4787028238652124211}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 2
+  carrierColor: 5
+  nextCarrierPos: {fileID: 1090832861408201505}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -38638,16 +38648,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 2
-  carrierColor: 5
-  nextCarrierPos: {fileID: 1090832861408201505}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -39242,6 +39242,16 @@ MonoBehaviour:
   - {fileID: 164547556395722797}
   - {fileID: 4724967163588275813}
   - {fileID: 7973241753236006454}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 31
+  carrierColor: 2
+  nextCarrierPos: {fileID: 827019321764301318}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -39252,16 +39262,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 31
-  carrierColor: 2
-  nextCarrierPos: {fileID: 827019321764301318}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -39650,6 +39650,16 @@ MonoBehaviour:
   - {fileID: 7580483109306213747}
   - {fileID: 4543717531350988097}
   - {fileID: 2972690400923215238}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 1
+  carrierColor: 11
+  nextCarrierPos: {fileID: 3461206959927175320}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -39660,16 +39670,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 1
-  carrierColor: 11
-  nextCarrierPos: {fileID: 3461206959927175320}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -41192,6 +41192,16 @@ MonoBehaviour:
   - {fileID: 129965650376562233}
   - {fileID: 8152930961859923404}
   - {fileID: 6619013480997935939}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 7
+  carrierColor: 19
+  nextCarrierPos: {fileID: 4051285692454492815}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -41202,16 +41212,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 7
-  carrierColor: 19
-  nextCarrierPos: {fileID: 4051285692454492815}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -43391,6 +43391,16 @@ MonoBehaviour:
   - {fileID: 3113567442956966985}
   - {fileID: 7832802094040166841}
   - {fileID: 634739691069896516}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 23
+  carrierColor: 5
+  nextCarrierPos: {fileID: 7691260999845766499}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -43401,16 +43411,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 23
-  carrierColor: 5
-  nextCarrierPos: {fileID: 7691260999845766499}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -46116,6 +46116,16 @@ MonoBehaviour:
   - {fileID: 8442145402265314717}
   - {fileID: 838771046287596579}
   - {fileID: 2022599759900880602}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 13
+  carrierColor: 15
+  nextCarrierPos: {fileID: 6702350235539006100}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -46126,16 +46136,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 13
-  carrierColor: 15
-  nextCarrierPos: {fileID: 6702350235539006100}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -46262,6 +46262,16 @@ MonoBehaviour:
   - {fileID: 1033836389703905011}
   - {fileID: 4180142554355726467}
   - {fileID: 289949126223867732}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 29
+  carrierColor: 5
+  nextCarrierPos: {fileID: 8606831872164992464}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -46272,16 +46282,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 29
-  carrierColor: 5
-  nextCarrierPos: {fileID: 8606831872164992464}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -46740,6 +46740,16 @@ MonoBehaviour:
   - {fileID: 2025201103712858091}
   - {fileID: 1259987834820750555}
   - {fileID: 7686357079529128681}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 4
+  carrierColor: 6
+  nextCarrierPos: {fileID: 2144313851113169402}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -46750,16 +46760,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 4
-  carrierColor: 6
-  nextCarrierPos: {fileID: 2144313851113169402}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -46786,6 +46786,16 @@ MonoBehaviour:
   - {fileID: 8440765684734322245}
   - {fileID: 4524309643045966847}
   - {fileID: 1868914755360524064}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 34
+  carrierColor: 12
+  nextCarrierPos: {fileID: 1647774982148002004}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 1
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -46796,16 +46806,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 34
-  carrierColor: 12
-  nextCarrierPos: {fileID: 1647774982148002004}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 1
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -47968,6 +47968,16 @@ MonoBehaviour:
   - {fileID: 5978170918329140576}
   - {fileID: 3414143641298379654}
   - {fileID: 172409422977917606}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 6
+  carrierColor: 12
+  nextCarrierPos: {fileID: 4956205876329988023}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -47978,16 +47988,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 6
-  carrierColor: 12
-  nextCarrierPos: {fileID: 4956205876329988023}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -48786,6 +48786,16 @@ MonoBehaviour:
   - {fileID: 6607447410433341534}
   - {fileID: 4388413534937852809}
   - {fileID: 3813870357555273292}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 25
+  carrierColor: 12
+  nextCarrierPos: {fileID: 3830384052264853833}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -48796,16 +48806,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 25
-  carrierColor: 12
-  nextCarrierPos: {fileID: 3830384052264853833}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017
@@ -49503,6 +49503,16 @@ MonoBehaviour:
   - {fileID: 4945545422242854636}
   - {fileID: 9192772373882318972}
   - {fileID: 4344895589037476982}
+  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
+  brickDelay: 0.15
+  SpawnOrder: 22
+  carrierColor: 4
+  nextCarrierPos: {fileID: 4969157102684205087}
+  isUpFront: 0
+  isFull: 0
+  bricksAddCount: 0
+  lastCarrier: 0
+  isMoving: 0
   brickCellPositions:
   - {x: -1.681, y: -0.08890611, z: 13.4}
   - {x: -1.2584784, y: -0.08890611, z: 13.4}
@@ -49513,16 +49523,6 @@ MonoBehaviour:
   - {x: 0.6649729, y: -0.08890611, z: 13.4}
   - {x: 1.0509458, y: -0.08890611, z: 13.4}
   - {x: 1.482, y: -0.08890611, z: 13.4}
-  SpawnOrder: 22
-  carrierColor: 4
-  nextCarrierPos: {fileID: 4969157102684205087}
-  lostPos: {fileID: 3406699291794758281, guid: 0d2743513002840a0b0e80916d3f3cb2, type: 3}
-  isUpFront: 0
-  isFull: 0
-  brickDelay: 0.15
-  bricksAddCount: 0
-  lastCarrier: 0
-  isMoving: 0
   Amplitude: 0.5
   Frquency: 1
   duration: 0.017

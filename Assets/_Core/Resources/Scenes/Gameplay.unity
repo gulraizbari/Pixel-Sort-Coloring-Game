@@ -2773,6 +2773,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &769365918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769365919}
+  m_Layer: 0
+  m_Name: TrayStacksParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769365919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769365918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1169625551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792262040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,12 +3580,12 @@ GameObject:
   - component: {fileID: 1002438061}
   - component: {fileID: 1002438063}
   m_Layer: 0
-  m_Name: hand-Tutorial
+  m_Name: TutorialController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1002438061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4308,7 +4339,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 769365919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1169625552
@@ -4324,7 +4356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pocketList: []
-  pocketPrefab: {fileID: 7328239901811062052, guid: 40d2dca82dd414a1984e4a7e6fb5b85a, type: 3}
+  pocketPrefab: {fileID: 8620907889506252026, guid: 273d65ea651cc4c848fadfa6b71dd4c3, type: 3}
   curLevelData: {fileID: 0}
   moveBricksSpeed: 0.5
 --- !u!1 &1173622087
@@ -9007,31 +9039,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cab7a0be605496d8c1a67b92f29409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stack: {fileID: 0}
-  curLevelData: {fileID: 0}
-  curLevelPositionData: {fileID: 0}
-  newSlatesList: []
-  horizontalOffset: 1.85
-  verticalOffset: 5
-  firstRowZPos: 3.5
-  theRopeHandler: {fileID: 0}
-  stacksWithRope: []
-  stackAddresses: []
-  ropeMaterial: {fileID: 0}
-  allRopes: []
-  ropeEdge: {fileID: 0}
-  stackDataList:
-    stackData: []
-  coloredStack: {fileID: 6506492254362963174, guid: 21ec1aefe27f346ae9ba1e4ae45a9b66, type: 3}
-  emptyStack: {fileID: 7436930963355778523, guid: adf6148a4307f45b6902131998163a04, type: 3}
+  _currentLevelData: {fileID: 0}
+  _currentLevelPositionData: {fileID: 0}
   _stackObj: []
-  stackBase: {fileID: 0}
-  spark: {fileID: 0}
-  emptyParent: {fileID: 1874190298}
-  stacksParent: {fileID: 1946899246}
-  _stackList: []
-  yOffset: 0.4
-  baseOffset: 0.2
+  _newSlatesList: []
+  _allRopes: []
+  _stacksWithRope: []
+  _stackAddresses: []
+  _ropeHandler: {fileID: 0}
+  _ropeMaterial: {fileID: 0}
+  _ropeEdge: {fileID: 0}
+  _coloredStack: {fileID: 6506492254362963174, guid: 21ec1aefe27f346ae9ba1e4ae45a9b66, type: 3}
+  _emptyStack: {fileID: 7436930963355778523, guid: adf6148a4307f45b6902131998163a04, type: 3}
+  _stackBase: {fileID: 0}
+  _spark: {fileID: 0}
+  _trayParent: {fileID: 769365919}
+  _emptyParent: {fileID: 1874190298}
+  _stacksParent: {fileID: 1946899246}
+  _yOffset: 0.33
+  _baseOffset: 0.3
 --- !u!4 &2119985824
 Transform:
   m_ObjectHideFlags: 0
@@ -9041,7 +9067,7 @@ Transform:
   m_GameObject: {fileID: 2119985822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21002,10 +21028,9 @@ MonoBehaviour:
   curLevelData: {fileID: 0}
   firstCarSpawnPos: {fileID: 3540002587055247882, guid: 3baa4b14ceab6401fa047b101b069a77, type: 3}
   spawnCarriers: []
+  totalCarriersList: []
   CarrierXOffset: 6
   dustParticle: {fileID: 8932541508155819781, guid: eeaa13039a855444885a20721049e52c, type: 3}
-  totalCarriersList: []
-  newBrickTexture: {fileID: 2800000, guid: 166270270ec6b478895a1d180da2cf1b, type: 3}
 --- !u!222 &8692383777425989323
 CanvasRenderer:
   m_ObjectHideFlags: 0

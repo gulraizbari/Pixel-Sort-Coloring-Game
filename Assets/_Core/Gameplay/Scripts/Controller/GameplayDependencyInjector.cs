@@ -30,7 +30,6 @@ namespace Sablo.Core
             buildingMaker.LevelManagerHandler = levelManager;
             gameUi.LevelManagerHandler = levelManager;
             roller.GridGeneratorHandler = gridGenerator;
-            // roller.SlateBuilderHandler = slateBuilder;
             gameLoop.LevelHandler = levelManager;
             settingsView._settingsHandler = settings;
         }

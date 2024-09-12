@@ -9,32 +9,29 @@ using UnityEngine;
 
 public class Stack : MonoBehaviour
 {
-    public List<Chip> bricksStack = new List<Chip>();
-    private BrickColor _selectedObjType;
-    public bool isSelected;
-    public GameObject padBase;
-    public GameObject hiddenBox;
-    List<int> _indicesToRemove = new List<int>();
-    public GameObject sparkParticle;
     public int stackId;
+    public List<Chip> chipsStack = new List<Chip>();
+    public List<SubStack> subStacks = new List<SubStack>();
+    public bool isMultiProducer;
+    public List<SubStack> multiProducerDataList = new List<SubStack>();
+    private List<int> _indicesToRemove = new List<int>();
+    public GameObject sparkParticle;
     public bool isSparked;
     public int questionEndIndex;
-    public List<SubStack> subStacks = new List<SubStack>();
-
-    public IGridGenerator GridGeneratorHandler;
-    // public ISlateBuilder SlateBuilderInterface;
-
+    public bool isSelected;
+    private bool isPulled;
+    public GameObject padBase;
+    public GameObject hiddenBox;
+    private BrickColor _selectedObjType;
+    [SerializeField] private SubStack chainedSubStack;
+    [SerializeField] private StackAddress chainedStackAddress;
+    [SerializeField] [Range(0, 5)] private float duration2 = 0.45f;
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
     [SerializeField] private float Frquency = 1f; 
     [SerializeField] private float duration = 0.02f;
-    public bool isMultiProducer;
-    [SerializeField] private SubStack chainedSubStack;
-    [SerializeField] private StackAddress chainedStackAddress;
     public ISlate SlateHandler;
-    public List<SubStack> multiProducerDataList = new List<SubStack>();
-    private bool isPulled;
-    [SerializeField] [Range(0, 5)] private float duration2 = 0.45f;
+    public IGridGenerator GridGeneratorHandler;
 
     private void OnMouseDown()
     {
@@ -54,36 +51,36 @@ public class Stack : MonoBehaviour
 
         IEnumerator JumpWithDelay()
         {
-            foreach (var brick in bricksStack)
+            foreach (var brick in chipsStack)
             {
                 brick.transform.DOScale(new Vector3(1, 1, 1), 0.02f);
                 yield return new WaitForSeconds(0.02f);
             }
 
-            var originalPositions = bricksStack.Select(brick => brick.transform.position).ToList();
-            for (var index = 0; index < bricksStack.Count; index++)
+            var originalPositions = chipsStack.Select(brick => brick.transform.position).ToList();
+            for (var index = 0; index < chipsStack.Count; index++)
             {
-                var brick = bricksStack[index];
+                var brick = chipsStack[index];
                 var offsetPos = brick.transform.position;
                 offsetPos.y += 2;
                 brick.transform.DOMove(offsetPos, 0.25f).SetEase(Ease.InQuad);
             }
 
             yield return new WaitForSeconds(0.25f);
-            for (int i = 0; i < bricksStack.Count; i++)
+            for (int i = 0; i < chipsStack.Count; i++)
             {
-                bricksStack[i].transform.DOMove(originalPositions[i], 0.25f);
+                chipsStack[i].transform.DOMove(originalPositions[i], 0.25f);
                 yield return new WaitForSeconds(0.02f);
             }
         }
     }
 
-    public void OnClickPad()
+    private void OnClickPad()
     {
         var tapInstance = TapController.Instance;
         if (tapInstance.curCarrierHandler.GetCarrierCount() < 9 || tapInstance.TrayHandler.GetPocketCount() < tapInstance.TrayHandler.GetMaxSize())
         {
-            if (bricksStack.Count > 0)
+            if (chipsStack.Count > 0)
             {
                 AudioManager.instance.AddSound();
             }
@@ -95,7 +92,7 @@ public class Stack : MonoBehaviour
 
     private void ShowHiddenBricks()
     {
-        if (bricksStack.Count == questionEndIndex)
+        if (chipsStack.Count == questionEndIndex)
         {
             if (hiddenBox != null)
             {
@@ -104,25 +101,24 @@ public class Stack : MonoBehaviour
         }
     }
 
-    public void PickStack(float offset, bool isOn)
+    private void PickStack(float offset, bool isOn)
     {
         var shouldBreak = false;
-        if (bricksStack.Count > 0)
+        if (chipsStack.Count > 0)
         {
             shouldBreak = IfPadContainSubsStackWithRope();
             if (shouldBreak)
             {
-                Debug.Log("Execution halted");
                 return;
             }
-            var lastCoin = (bricksStack.Count) - 1;
-            _selectedObjType = bricksStack[lastCoin].brickColor;
+            var lastCoin = (chipsStack.Count) - 1;
+            _selectedObjType = chipsStack[lastCoin].brickColor;
             var isDone = false;
-            for (int i = bricksStack.Count - 1; i >= 0; i--)
+            for (int i = chipsStack.Count - 1; i >= 0; i--)
             {
-                if (bricksStack[i].brickColor.Equals(_selectedObjType))
+                if (chipsStack[i].brickColor.Equals(_selectedObjType))
                 {
-                    var brick = bricksStack[i];
+                    var brick = chipsStack[i];
                     TapController.Instance.AddBricksToSelectedStack(brick, this);
                     _indicesToRemove.Add(i);
                     isDone = isOn;
@@ -141,7 +137,7 @@ public class Stack : MonoBehaviour
             _indicesToRemove.Clear();
             isSelected = false;
             TurnOffBase();
-            
+            subStacks.Reverse();
             if (subStacks.Count > 0)
             {
                 subStacks.RemoveAt(0);
@@ -153,26 +149,23 @@ public class Stack : MonoBehaviour
     {
         if (subStacks.Count > 0 && subStacks[0].stackType == Types.BrickType.Rope)
         {
-            Debug.Log($"<color=green>{subStacks[0].ropeId} : RopeId! </color>");
             chainedSubStack = GridGeneratorHandler.GetSubStackByRopId(subStacks[0].ropeId, subStacks[0]);
-            
             var indexOfChainedSubStack = GridGeneratorHandler.GetIndexOfSubStack(chainedSubStack);
             chainedStackAddress = GridGeneratorHandler.GetSubStackAddressByIndex(indexOfChainedSubStack);
 
             // logic to Check if both chained SubStack is at top ? call the move fn : do nothing
-            Stack stackWithChainedRope = GridGeneratorHandler.GetStackContainingSubStackWithEqualRopId(chainedStackAddress.indexOfSlate, chainedStackAddress.indexOfStack);
+            var stackWithChainedRope = GridGeneratorHandler.GetStackContainingSubStackWithEqualRopId(chainedStackAddress.indexOfSlate, chainedStackAddress.indexOfStack);
             var rope = GridGeneratorHandler.GetRopeHandlerByRopeId(subStacks[0].ropeId);
             Rope theRope = null;
             if (rope.TryGetComponent(out Rope myRope))
+            {
                 theRope = myRope;
+            }
             var ropeOriginalMaterial = GridGeneratorHandler.GetRopeMaterial;
-            
             if (stackWithChainedRope)
             {
-                Debug.Log($"<color=red>{stackWithChainedRope.subStacks[0].myChip.brickColor} : Is not null </color>");
                 if (stackWithChainedRope.subStacks.IndexOf(chainedSubStack) == 0) // chained subStack is at top
                 {
-                    Debug.Log($"<color=red>{stackWithChainedRope.subStacks.IndexOf(chainedSubStack)} : chained Is at top </color>");
                     stackWithChainedRope.subStacks[0].stackType = Types.BrickType.None;
                     Destroy(rope.gameObject, 0.01f);
                     stackWithChainedRope.OnClickPad();
@@ -202,10 +195,6 @@ public class Stack : MonoBehaviour
                     return true;
                 }
             }
-            else
-            {
-                Debug.Log("<color=red>Can not find pad </color>");
-            }
         }
 
         return false;
@@ -215,7 +204,7 @@ public class Stack : MonoBehaviour
     {
         if (!isSparked)
         {
-            if (bricksStack.Count <= 0)
+            if (chipsStack.Count <= 0)
             {
                 DOVirtual.DelayedCall(0.3f, () =>
                 {
@@ -236,7 +225,7 @@ public class Stack : MonoBehaviour
     public void SpawnBase(GameObject baseObj)
     {
         padBase = Instantiate(baseObj, transform);
-        var pos = bricksStack[0].transform.position;
+        var pos = chipsStack[0].transform.position;
         pos.y -= 0.25f;
         padBase.transform.position = pos;
         if (isMultiProducer)
@@ -249,7 +238,7 @@ public class Stack : MonoBehaviour
     {
         foreach (var index in _indicesToRemove)
         {
-            bricksStack.RemoveAt(index);
+            chipsStack.RemoveAt(index);
         }
     }
 
@@ -262,7 +251,7 @@ public class Stack : MonoBehaviour
     {
         foreach (var brick in bricks)
         {
-            bricksStack.Add(brick);
+            chipsStack.Add(brick);
         }
     }
 
@@ -292,7 +281,7 @@ public class Stack : MonoBehaviour
 
     public void InitialAnimationBrick()
     {
-        if (bricksStack.Count > 0)
+        if (chipsStack.Count > 0)
         {
             StartCoroutine(JumpWithDelay());
         }
@@ -300,25 +289,25 @@ public class Stack : MonoBehaviour
         IEnumerator JumpWithDelay()
         {
             yield return new WaitForSeconds(0.2f);
-            foreach (var brick in bricksStack)
+            foreach (var brick in chipsStack)
             {
                 brick.transform.DOScale(new Vector3(1, 1, 1), 0.02f);
                 yield return new WaitForSeconds(0.02f);
             }
 
-            var originalPositions = bricksStack.Select(brick => brick.transform.position).ToList();
-            for (var index = 0; index < bricksStack.Count; index++)
+            var originalPositions = chipsStack.Select(brick => brick.transform.position).ToList();
+            for (var index = 0; index < chipsStack.Count; index++)
             {
-                var brick = bricksStack[index];
+                var brick = chipsStack[index];
                 var offsetPos = brick.transform.position;
                 offsetPos.y += 2;
                 brick.transform.DOMove(offsetPos, 0.25f).SetEase(Ease.InQuad);
             }
 
             yield return new WaitForSeconds(0.25f);
-            for (int i = 0; i < bricksStack.Count; i++)
+            for (int i = 0; i < chipsStack.Count; i++)
             {
-                bricksStack[i].transform.DOMove(originalPositions[i], 0.25f);
+                chipsStack[i].transform.DOMove(originalPositions[i], 0.25f);
                 yield return new WaitForSeconds(0.02f);
             }
         }

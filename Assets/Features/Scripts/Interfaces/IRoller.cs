@@ -12,8 +12,6 @@ public interface IRoller
     
     GameObject GetSpawnParticle { get; }
 
-    Texture GetNewBrickTexture();
-
     Transform GetRollerTransform();
     
      int MaterialSumCount { get ; set; }
