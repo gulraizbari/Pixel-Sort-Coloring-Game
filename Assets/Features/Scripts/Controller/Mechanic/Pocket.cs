@@ -58,12 +58,22 @@ public class Pocket : MonoBehaviour
             float xPosition;
             if (index == numberOfObjects - 1)
             {
-                xPosition = (index - (numberOfObjects - 1) / 2.0f) * 0.25f;
+                xPosition = (index - (numberOfObjects - 1) / 2.0f) * 0.325f;
             }
             else
             {
                 xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
             }
+            
+            // var xPosition = (index - (numberOfObjects - 1) / 2.0f) * spacing;
+            // if (index == 0 )
+            // {
+            //     xPosition -= 0.38f;
+            // }
+            // else if (index == numberOfObjects - 1)
+            // {
+            //     xPosition -= 0.38f;
+            // }
             
             obj.transform.localPosition = new Vector3(xPosition, 0, 0);
             pocketCell.Add(obj.transform);

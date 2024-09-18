@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4300acdd9f28941e1a88fbd3b0d2f02f, type: 3}
-  m_Name: Level 1 Position Data
+  m_Name: Level 1 Data sub1
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -305,7 +305,7 @@ MonoBehaviour:
       Data: 19|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -320,7 +320,7 @@ MonoBehaviour:
       Data: 20|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -380,7 +380,7 @@ MonoBehaviour:
       Data: 24|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -410,7 +410,7 @@ MonoBehaviour:
       Data: 26|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -425,7 +425,7 @@ MonoBehaviour:
       Data: 27|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -515,7 +515,7 @@ MonoBehaviour:
       Data: 33|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -530,7 +530,7 @@ MonoBehaviour:
       Data: 34|CellData, Assembly-CSharp
     - Name: tileType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: isMirror
       Entry: 5
       Data: false
@@ -773,3 +773,184 @@ MonoBehaviour:
       Data: 
   Row: 7
   Column: 7
+  noOfPocketsToSpawn: 1
+  curLevelBuilding: {fileID: 4391128480966397496, guid: 27981db7fc88549118d3b2f35203687f, type: 3}
+  totalCarriers: 12
+  xOffsetForColliders: 1.92
+  slateBuilderOffsets:
+    horizontalOffset: 2
+    verticalOffset: 4
+    firstStackPos: 5.7
+  carrierToSpawn:
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  pocketsSpawnPos:
+  - {fileID: 2536583695327600708, guid: 854bdd59bfdda4c73a4ad3e6217fcf85, type: 3}
+  - {fileID: 2536583695327600708, guid: e7331aa098354406ba907efd19b3ad67, type: 3}
+  - {fileID: 2536583695327600708, guid: 2caa9bbc1b77842c9a665518b0bab6de, type: 3}
+  - {fileID: 2536583695327600708, guid: cf367822b60554fe59f33f6c39215ce4, type: 3}
+  - {fileID: 2536583695327600708, guid: fe3c3b9efa411458eaa805de6b683a9f, type: 3}
+  allStacks:
+    stackData:
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 6
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: 15ec5ba8b3e19450a8ecb30e34c07dae, type: 3}
+        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: af557dd7282d94d9ba93933dc35db6c4, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: 15ec5ba8b3e19450a8ecb30e34c07dae, type: 3}
+        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 9
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 3
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 3
+        endIndex: 7
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: 15ec5ba8b3e19450a8ecb30e34c07dae, type: 3}
+        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 5
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 5
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 5
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: 15ec5ba8b3e19450a8ecb30e34c07dae, type: 3}
+        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 4
+        endIndex: 6
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: 15ec5ba8b3e19450a8ecb30e34c07dae, type: 3}
+        chipImage: {fileID: 2141094338, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+    - isMulti: 0
+      multiProducerData: []
+      chipData:
+      - startIndex: 0
+        endIndex: 4
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: b8761ae54399a4f41b1c22487e3d1a20, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+      - startIndex: 4
+        endIndex: 8
+        stackType: 0
+        ropeId: 0
+        myChip: {fileID: 3531308825145773157, guid: af557dd7282d94d9ba93933dc35db6c4, type: 3}
+        chipImage: {fileID: 254399522, guid: b00abdb7ff84845eaa0f9526e92f3687, type: 3}
+  isMultiTierLevel: 0
+  subLevel: []

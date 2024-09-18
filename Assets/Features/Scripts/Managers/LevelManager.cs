@@ -9,9 +9,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
 {
     [SerializeField] private int _level = 0;
     [SerializeField] private List<LevelData> levelData = new List<LevelData>();
-    [SerializeField] private List<LevelPositionData> levelPositionData = new List<LevelPositionData>();
     [SerializeField] private LevelData _currentLevel;
-    [SerializeField] private LevelPositionData _currentLevelPositionData;
     [SerializeField] private int subLevelNum = 0;
     private int totalSubLevels;
     public int currentLevel;
@@ -19,7 +17,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
     private List<LevelData> subLevels;
     public bool isSaveSystemActive;
     public LevelData GetCurrentLevel => _currentLevel;
-    public LevelPositionData GetCurrentPositionLevel => _currentLevelPositionData;
     public int GetSubLevel => subLevelNum;
     public int GetTotalSubLevelCount => totalSubLevels;
 
@@ -58,7 +55,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
             PlayerPrefs.SetInt("level", 0);
         }
         _currentLevel = levelData[level];
-        _currentLevelPositionData = levelPositionData[level];
         SubLevelList = _currentLevel.subLevel;
         isMultiTierLevel = _currentLevel.isMultiTierLevel;
         totalSubLevels = _currentLevel.subLevel.Count;
@@ -87,7 +83,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
             PlayerPrefs.SetInt("level", 0);
         }
         _currentLevel = levelData[level];
-        _currentLevelPositionData = levelPositionData[level];
         
         if (_currentLevel.subLevel.Count != 0)
         {

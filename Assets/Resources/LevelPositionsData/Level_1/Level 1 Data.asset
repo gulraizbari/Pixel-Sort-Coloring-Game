@@ -1,0 +1,814 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4300acdd9f28941e1a88fbd3b0d2f02f, type: 3}
+  m_Name: Level 1 Data
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Grid
+      Entry: 7
+      Data: 0|CellData[,], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 49
+    - Name: ranks
+      Entry: 1
+      Data: 7|7
+    - Name: 
+      Entry: 7
+      Data: 1|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 1
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 38|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 40|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 41|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 44|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 45|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 47|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 49|CellData, Assembly-CSharp
+    - Name: tileType
+      Entry: 3
+      Data: 2
+    - Name: isMirror
+      Entry: 5
+      Data: false
+    - Name: isMultiProducer
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Row: 7
+  Column: 7
+  noOfPocketsToSpawn: 0
+  curLevelBuilding: {fileID: 0}
+  totalCarriers: 0
+  xOffsetForColliders: 1.92
+  slateBuilderOffsets:
+    horizontalOffset: 2
+    verticalOffset: 4
+    firstStackPos: 5.7
+  carrierToSpawn:
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 184c405b4201c488990d4f63187c5ca6, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: 40d35736a5cc140249a48b9d042129c2, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  - CarrierType: {fileID: 3987822203377927596, guid: eb07146d3649c4e05b5f9d6b1bc5b643, type: 3}
+  pocketsSpawnPos: []
+  allStacks:
+    stackData: []
+  isMultiTierLevel: 1
+  subLevel:
+  - {fileID: 11400000, guid: 265056e53719a450a876f1be0468f76b, type: 2}
+  - {fileID: 11400000, guid: 9a99cc5de71d7417396bed2ba4eaa12c, type: 2}

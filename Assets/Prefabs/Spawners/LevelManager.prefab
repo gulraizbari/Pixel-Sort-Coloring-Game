@@ -44,12 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbaf0749e2bc4a61ac1a9f2b631d027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Is_debug: 1
-  IsSetCoins: 0
-  _level: 3
-  CoinToSet: 3
+  _level: 0
   levelData:
-  - {fileID: 11400000, guid: fe89a02af805e4970b05d3cb6ce878b9, type: 2}
-  - {fileID: 11400000, guid: fa610659d27fa4e7392dc70641ea9872, type: 2}
-  - {fileID: 11400000, guid: 94d8bb31f1e46430298169ba50812bef, type: 2}
+  - {fileID: 11400000, guid: 265056e53719a450a876f1be0468f76b, type: 2}
+  _currentLevel: {fileID: 0}
+  subLevelNum: 0
   currentLevel: 0
+  isSaveSystemActive: 0

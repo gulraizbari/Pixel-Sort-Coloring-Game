@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,9 +30,11 @@ public class Building : MonoBehaviour
     public void UpdateBuildingPercentage()
     {
         if (slider == null)
+        {
             return;
+        }
         var targetValue = 1.0f * currentBrickIndex / buildingBricks.Count;
-    
+
         // Animate the slider value
         slider.DOValue(targetValue, 0.01f).SetEase(Ease.Linear);
 
@@ -43,7 +42,7 @@ public class Building : MonoBehaviour
         var initialPercentage = slider.value * 100f;
         var targetPercentage = targetValue * 100f;
 
-        DOTween.To(() => initialPercentage, x => 
+        DOTween.To(() => initialPercentage, x =>
         {
             initialPercentage = x;
             percentageText.text = $"{x:F0} %";
@@ -53,7 +52,7 @@ public class Building : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -61,9 +60,8 @@ public class Building : MonoBehaviour
             currentBrickIndex = buildingBricks.Count - 9;
         }
     }
-    
+
 #endif
-    
 
     private void Awake()
     {
@@ -73,18 +71,17 @@ public class Building : MonoBehaviour
         }
 
         SetScaleOfOrnamentsItemsToZero();
-        if(slider)
+        if (slider)
             slider.gameObject.SetActive(false);
     }
 
     public Transform GetCurrentBrick()
     {
-        int maxCount = buildingBricks.Count;
+        var maxCount = buildingBricks.Count;
         Transform brick = null;
-        /*var brick = buildingBricks[maxCount - 1];*/
         if (currentBrickIndex < maxCount)
         {
-             brick = buildingBricks[currentBrickIndex];
+            brick = buildingBricks[currentBrickIndex];
             currentBrickIndex++;
             UpdateBuildingPercentage();
             TurnOnOrnamentsOnEnd();
@@ -93,6 +90,7 @@ public class Building : MonoBehaviour
         {
             brick = null;
         }
+
         return brick;
     }
 
@@ -105,7 +103,7 @@ public class Building : MonoBehaviour
             buildingColoredMaterials.Add(coloredBuilding.buildingBricks[i].GetComponent<MeshRenderer>().sharedMaterial);
         }
     }
-    
+
     [Button]
     public void AssignWhiteMaterial()
     {
@@ -114,7 +112,7 @@ public class Building : MonoBehaviour
             buildingBricks[i].GetComponent<MeshRenderer>().sharedMaterial = whiteMaterial;
         }
     }
-    
+
     [Button]
     public void AssignBuildingBricks()
     {
@@ -124,54 +122,53 @@ public class Building : MonoBehaviour
             for (int i = 0; i < building.childCount; i++)
             {
                 buildingBricks.Add(building.GetChild(i));
-                building.GetChild(i).gameObject.SetActive(false);
-            }   
-        });
-    }
-    [Button]
-    public void ActivateFullBuilding()
-    {
-        buildingBricks.ForEach(transform1 =>
-        {
-            transform1.gameObject.SetActive(true);
-        });
-    }
-    [Button]
-    public void DeActivateFullBuilding()
-    {
-        buildingBricks.ForEach(transform1 =>
-        {
-            transform1.gameObject.SetActive(false);
+                building.GetChild(i).gameObject.SetActive(true);
+            }
         });
     }
 
-    public void AddBrickToBuilding(Chip chipToAdd)
-    {
-        brickContainer.Add(chipToAdd);
-    }
+    // public void ActivateFullBuilding()
+    // {
+    //     buildingBricks.ForEach(transform1 =>
+    //     {
+    //         transform1.gameObject.SetActive(true);
+    //     });
+    // }
+    //
+    // public void DeActivateFullBuilding()
+    // {
+    //     buildingBricks.ForEach(transform1 =>
+    //     {
+    //         transform1.gameObject.SetActive(false);
+    //     });
+    // }
+
+    // public void AddBrickToBuilding(Chip chipToAdd)
+    // {
+    //     brickContainer.Add(chipToAdd);
+    // }
 
     private void TurnOnOrnamentsOnEnd()
     {
-        
-        if (currentBrickIndex >= (buildingBricks.Count-1))
-        {   
-            if(slider) 
+        if (currentBrickIndex >= (buildingBricks.Count - 1))
+        {
+            if (slider)
+            {
                 slider.gameObject.SetActive(false);
-            // Debug.LogError("boom");
+            }
             DOVirtual.DelayedCall(0.5f, (() =>
             {
                 for (var index = 0; index < Ornaments.Count; index++)
                 {
                     var item = Ornaments[index];
                     item.gameObject.SetActive(true);
-                    item.transform.DOScale(new Vector3(1.2f,1.2f,1.2f), 0.35f).OnComplete(() =>
+                    item.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.35f).OnComplete(() =>
                     {
-                        item.transform.DOScale(new Vector3(1f,1f,1f), 0.21f);
+                        item.transform.DOScale(new Vector3(1f, 1f, 1f), 0.21f);
                     });
                 }
             }));
         }
-        
     }
 
     private void SetScaleOfOrnamentsItemsToZero()
@@ -186,22 +183,21 @@ public class Building : MonoBehaviour
     {
         StartCoroutine(ChangeColorWithDelay());
 
-         IEnumerator ChangeColorWithDelay()
+        IEnumerator ChangeColorWithDelay()
         {
             for (var index = 0; index < buildingBricks.Count; index++)
             {
                 var brick = buildingBricks[index];
                 var defaultScale = brick.localScale;
-                brick.DOPunchScale(defaultScale*(0.8f), 0.2f, 1, 0.2f).SetEase(Ease.OutBounce);
-                brick.GetComponent<MeshRenderer>().material.DOColor(buildingColoredMaterials[index].color , 0.05f);
+                brick.DOPunchScale(defaultScale * (0.8f), 0.2f, 1, 0.2f).SetEase(Ease.OutBounce);
+                brick.GetComponent<MeshRenderer>().material.DOColor(buildingColoredMaterials[index].color, 0.05f);
                 yield return new WaitForSeconds(0.01f);
             }
         }
     }
-    
+
     public void ChangeColorOfBrickAnimationByLevel(int startPoint, int totalBrickPerLevel)
-    {   
-        Debug.LogError("ChangeColorOfBrickAnimationByLevel");
+    {
         StartCoroutine(ChangeColorWithDelay());
 
         IEnumerator ChangeColorWithDelay()
@@ -210,13 +206,10 @@ public class Building : MonoBehaviour
             {
                 var brick = buildingBricks[index];
                 var defaultScale = brick.localScale;
-                brick.DOPunchScale(defaultScale*(0.8f), 0.2f, 1, 0.2f).SetEase(Ease.OutBounce);
-                brick.GetComponent<MeshRenderer>().material.DOColor(buildingColoredMaterials[index].color , 0.05f);
+                brick.DOPunchScale(defaultScale * (0.8f), 0.2f, 1, 0.2f).SetEase(Ease.OutBounce);
+                brick.GetComponent<MeshRenderer>().material.DOColor(buildingColoredMaterials[index].color, 0.05f);
                 yield return new WaitForSeconds(0.01f);
             }
         }
     }
-    
-    
-
 }

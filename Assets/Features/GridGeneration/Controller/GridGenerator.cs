@@ -9,8 +9,7 @@ namespace PixelSort.Feature.GridGeneration
 {
     public class GridGenerator : BaseGameplayModule, IGridGenerator
     {
-        [SerializeField] private LevelData _currentLevelData;
-        [SerializeField] private LevelPositionData _currentLevelPositionData;
+        [SerializeField] private LevelData currentLevelData;
         [SerializeField] private List<GameObject> _stackObj = new List<GameObject>();
         [SerializeField] private List<Slate> _newSlatesList;
         [SerializeField] private List<RopeHandler> _allRopes;
@@ -42,9 +41,8 @@ namespace PixelSort.Feature.GridGeneration
 
         public override void Initialize()
         {
-            SetLevelPositionData();
             SetLevelData();
-            SpawnData(transform, _currentLevelPositionData, _emptyStack, _coloredStack);
+            SpawnData(transform, currentLevelData, _emptyStack, _coloredStack);
             SortStackByRope();
             SpawnMultipleRopes();
             SetParent();
@@ -57,12 +55,11 @@ namespace PixelSort.Feature.GridGeneration
         {
             _newSlatesList.ForEach(x => x.gameObject.SetActive(false));
             _newSlatesList.Clear();
-            SetLevelPositionData();
             SetLevelData();
             _stacksWithRope.Clear();
             _allRopes.Clear();
             _stackAddresses.Clear();
-            SpawnData(transform, _currentLevelPositionData, _emptyStack, _coloredStack);
+            SpawnData(transform, currentLevelData, _emptyStack, _coloredStack);
             SortStackByRope();
             SpawnMultipleRopes();
             SetParent();
@@ -73,13 +70,8 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SetLevelData()
         {
-            _currentLevelData = LevelManagerHandler.GetCurrentLevel;
-            _stackDataList = _currentLevelData.allStacks;
-        }
-
-        private void SetLevelPositionData()
-        {
-            _currentLevelPositionData = LevelManagerHandler.GetCurrentPositionLevel;
+            currentLevelData = LevelManagerHandler.GetCurrentLevel;
+            _stackDataList = currentLevelData.allStacks;
         }
 
         public void OnLevelResume()
@@ -98,7 +90,7 @@ namespace PixelSort.Feature.GridGeneration
             }
         }
 
-        private void SpawnData(Transform parentObject, LevelPositionData level, Stack emptyStack, Stack coloredStack)
+        private void SpawnData(Transform parentObject, LevelData level, Stack emptyStack, Stack coloredStack)
         {
             _rows = level.Column;
             _columns = level.Row;
@@ -173,9 +165,9 @@ namespace PixelSort.Feature.GridGeneration
 
         private void SpawnStacks()
         {
-            for (var index = 0; index < _currentLevelData.allStacks.stackData.Count; index++)
+            for (var index = 0; index < currentLevelData.allStacks.stackData.Count; index++)
             {
-                var stack = _currentLevelData.allStacks.stackData[index];
+                var stack = currentLevelData.allStacks.stackData[index];
                 LoadStack(stack, index < _stackList.Count ? _stackList[index] : null, _gridPositions[index].position);
                 _baseOffset = 0.3f;
             }
@@ -188,7 +180,6 @@ namespace PixelSort.Feature.GridGeneration
                 var item = new GameObject("Stack" + i);
                 item.transform.parent = _trayParent.transform;
                 _stackObj.Add(item);
-                _stackList[i].padBase = _stackBase;
                 _stackList[i].stackId = i;
                 _stackList[i].isMultiProducer = _stackDataList.stackData[i].isMulti;
                 _stackList[i].sparkParticle = _spark;
@@ -356,7 +347,7 @@ namespace PixelSort.Feature.GridGeneration
 
         int IGridGenerator.GetTotalNumberOfSlates()
         {
-            return _currentLevelData.allStacks.stackData.Count; // need to fix later
+            return currentLevelData.allStacks.stackData.Count; // need to fix later
         }
 
         #endregion

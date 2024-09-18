@@ -118,7 +118,10 @@ public class Carrier : MonoBehaviour, ICarrier
                     particlePos.y -= 0.1f;
                     SpawnParticleOnBrickDrop(RollerInterface.GetSpawnParticle, particlePos);
                     brick.gameObject.SetActive(false);
-                    targetBrick.gameObject.SetActive(true);
+                    var brickColor = brick.brickRenderer.material.color;
+                    targetBrick.transform.GetComponent<Renderer>().material.DOColor(brickColor,0.02f);
+                    // targetBrick.transform.GetComponent<Renderer>().material.DOColor(Building.Instance.GetColoredMaterialsList(i).color, 0.02f);
+                    // targetBrick.gameObject.SetActive(true);
                     var defaultScale = targetBrick.localScale;
                     targetBrick.DOPunchScale(defaultScale, 0.2f, 1, 0.2f).SetEase(Ease.OutBounce);
                     if (i == brickCount)
