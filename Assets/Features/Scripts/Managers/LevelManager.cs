@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using PixelSort.Feature.GridGeneration;
-using Sablo.Analytics;
 using Sablo.Gameplay;
 using Sirenix.OdinInspector;
 
@@ -42,7 +41,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
         GameLoop.Instance.UpdateLevelNo(currentLevel + 1);
         GameLoop.Instance.ActivateTutorialPanel(currentLevel);
         GameLoop.Instance.RefreshCoins();
-        LionAnalyticEvents.MissionStarted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
+        // LionAnalyticEvents.MissionStarted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
         LoadLevel();
     }
 
@@ -74,7 +73,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
         {
             SubLevelPref = subLevelNum;
         }
-        LionAnalyticEvents.MissionStepCompleted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
+        // LionAnalyticEvents.MissionStepCompleted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
         var level = PlayerPrefs.GetInt("level");
         if (level > levelData.Count - 1)
         {
