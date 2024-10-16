@@ -25,5 +25,8 @@ public enum BrickColor
     PinkOrange,
     Grey,
     Magenta,
-    None
+    None,
+    Black,
+    RedOrange1,
+    RedOrange2
 }

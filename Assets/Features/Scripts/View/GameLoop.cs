@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Sablo.Analytics;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class GameLoop : MonoBehaviour
@@ -38,8 +35,7 @@ public class GameLoop : MonoBehaviour
     public void GameFail()
     {
         //LionAnalyticEvents.OnLevelFail(LevelHandler.GetCurrentLevelIndex()+1,LevelHandler.LevelAttempt,"");
-        LionAnalyticEvents.MissionFailed(false, "GamePlay", LevelHandler.GetCurrentLevelIndex() + 1,
-            LevelHandler.GetSubLevel + 1, LevelHandler.LevelAttempt); //Level Failed
+        // LionAnalyticEvents.MissionFailed(false, "GamePlay", LevelHandler.GetCurrentLevelIndex() + 1, LevelHandler.GetSubLevel + 1, LevelHandler.LevelAttempt); //Level Failed
         ManagePlayOnButton();
         LevelHandler.CurrentRunningLevel = 0;
         LevelHandler.LevelAttempt += 1;
@@ -49,8 +45,7 @@ public class GameLoop : MonoBehaviour
     public void GameWin()
     {  
         //LionAnalyticEvents.OnLevelFail(LevelHandler.GetCurrentLevelIndex()+1,LevelHandler.LevelAttempt,"");
-        LionAnalyticEvents.MissionCompleted(false, "GamePlay", LevelHandler.GetCurrentLevelIndex() + 1,
-            LevelHandler.GetSubLevel + 1, LevelHandler.LevelAttempt); //Level Completed
+        // LionAnalyticEvents.MissionCompleted(false, "GamePlay", LevelHandler.GetCurrentLevelIndex() + 1, LevelHandler.GetSubLevel + 1, LevelHandler.LevelAttempt); //Level Completed
         LevelHandler.SubLevelPref = 0;
         myGameUi.LevelManagerHandler.IncrementLevel();  
         LevelHandler.CurrentRunningLevel = 0;

@@ -10,7 +10,6 @@ namespace Sablo.Core
         [SerializeField] private Tray tray;
         [SerializeField] private Roller roller;
         [SerializeField] private LevelManager levelManager;
-        [SerializeField] private SlateBuilder slateBuilder;
         [SerializeField] private BuildingMaker buildingMaker;
         [SerializeField] private GameUi gameUi;
         [SerializeField] private GameLoop gameLoop;
@@ -25,7 +24,6 @@ namespace Sablo.Core
             roller.TrayHandler = tray;
             tray.LevelManagerHandler = levelManager;
             gridGenerator.LevelManagerHandler = levelManager;
-            slateBuilder.LevelManagerHandler = levelManager;
             roller.LevelManagerHandler = levelManager;
             buildingMaker.LevelManagerHandler = levelManager;
             gameUi.LevelManagerHandler = levelManager;

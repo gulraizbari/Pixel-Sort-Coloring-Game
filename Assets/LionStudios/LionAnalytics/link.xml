@@ -1,6 +1,0 @@
-<linker>
-  <assembly fullname="Firebase.Analytics">
-    <type fullname="Firebase.Analytics.FirebaseAnalytics" preserve="all" />
-    <type fullname="Firebase.Analytics.Parameter" preserve="all" />
-  </assembly>
-</linker>

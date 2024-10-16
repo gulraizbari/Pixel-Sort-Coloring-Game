@@ -6,7 +6,6 @@ public interface ILevelManager
     void OnLevelWin();
     int GetCurrentLevelIndex();
     LevelData GetCurrentLevel { get; }
-    LevelPositionData GetCurrentPositionLevel { get; }
     bool isOfMultiTierLevel { get; }
     void IncrementLevel();
     void ReloadLevel();

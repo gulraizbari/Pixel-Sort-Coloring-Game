@@ -444,7 +444,7 @@ MonoBehaviour:
   edgeObj1: {fileID: 3395890038022655933, guid: 1cc1564f1753c4922abdd69c769e65b9, type: 3}
   edgeObj2: {fileID: 6533212697944562920, guid: 669c2ed59c9cf4120ad95e49f8e5d5a2, type: 3}
   numberOfObjects: 21
-  spacing: 0.29
+  spacing: 0.34
   noOfBricksToMoveOnContinue: 9
   Amplitude: 0.5
   Frquency: 1

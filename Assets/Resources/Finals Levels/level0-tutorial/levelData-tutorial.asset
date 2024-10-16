@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 2536583695327600708, guid: cf367822b60554fe59f33f6c39215ce4, type: 3}
   - {fileID: 2536583695327600708, guid: fe3c3b9efa411458eaa805de6b683a9f, type: 3}
   noOfPocketsToSpawn: 1
-  curLevelBuilding: {fileID: 4046193393196515154, guid: a39fa48c02fb84afbb808b9c1bbf809a, type: 3}
+  curLevelBuilding: {fileID: 5961899832333906961, guid: 0c9eeba527a54e546b1fd1dd64f92bba, type: 3}
   totalCarriers: 0
   xOffsetForColliders: 1.92
   slateBuilderOffsets:

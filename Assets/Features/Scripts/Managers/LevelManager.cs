@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using PixelSort.Feature.GridGeneration;
-using Sablo.Analytics;
 using Sablo.Gameplay;
 using Sirenix.OdinInspector;
 
@@ -9,9 +8,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
 {
     [SerializeField] private int _level = 0;
     [SerializeField] private List<LevelData> levelData = new List<LevelData>();
-    [SerializeField] private List<LevelPositionData> levelPositionData = new List<LevelPositionData>();
     [SerializeField] private LevelData _currentLevel;
-    [SerializeField] private LevelPositionData _currentLevelPositionData;
     [SerializeField] private int subLevelNum = 0;
     private int totalSubLevels;
     public int currentLevel;
@@ -19,7 +16,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
     private List<LevelData> subLevels;
     public bool isSaveSystemActive;
     public LevelData GetCurrentLevel => _currentLevel;
-    public LevelPositionData GetCurrentPositionLevel => _currentLevelPositionData;
     public int GetSubLevel => subLevelNum;
     public int GetTotalSubLevelCount => totalSubLevels;
 
@@ -45,7 +41,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
         GameLoop.Instance.UpdateLevelNo(currentLevel + 1);
         GameLoop.Instance.ActivateTutorialPanel(currentLevel);
         GameLoop.Instance.RefreshCoins();
-        LionAnalyticEvents.MissionStarted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
+        // LionAnalyticEvents.MissionStarted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
         LoadLevel();
     }
 
@@ -58,7 +54,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
             PlayerPrefs.SetInt("level", 0);
         }
         _currentLevel = levelData[level];
-        _currentLevelPositionData = levelPositionData[level];
         SubLevelList = _currentLevel.subLevel;
         isMultiTierLevel = _currentLevel.isMultiTierLevel;
         totalSubLevels = _currentLevel.subLevel.Count;
@@ -78,7 +73,7 @@ public class LevelManager : BaseGameplayModule, ILevelManager
         {
             SubLevelPref = subLevelNum;
         }
-        LionAnalyticEvents.MissionStepCompleted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
+        // LionAnalyticEvents.MissionStepCompleted(false, "GamePlay", Level + 1, subLevelNum + 1, LevelAttempt);
         var level = PlayerPrefs.GetInt("level");
         if (level > levelData.Count - 1)
         {
@@ -87,7 +82,6 @@ public class LevelManager : BaseGameplayModule, ILevelManager
             PlayerPrefs.SetInt("level", 0);
         }
         _currentLevel = levelData[level];
-        _currentLevelPositionData = levelPositionData[level];
         
         if (_currentLevel.subLevel.Count != 0)
         {
