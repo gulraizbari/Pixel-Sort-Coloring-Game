@@ -109,7 +109,6 @@ namespace PixelSort.Feature.GridGeneration
                     switch (grid[row, col].tileType)
                     {
                         case TileType.Empty:
-                            Debug.LogError("No Stack here");
                             SpawnNewStack(emptyStack, _emptyParent, false, tilePosition, row, col);
                             break;
                         case TileType.Stack:

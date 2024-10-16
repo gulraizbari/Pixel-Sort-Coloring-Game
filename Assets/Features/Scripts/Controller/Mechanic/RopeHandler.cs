@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using RopeToolkit;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

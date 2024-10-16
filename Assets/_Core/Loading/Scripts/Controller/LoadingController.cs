@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Sablo.Analytics;
 using Sablo.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +14,7 @@ namespace Sablo.Loading
 
         private void Start()
         {
-            LionAnalyticEvents.OnGameStartEvent();
+            // LionAnalyticEvents.OnGameStartEvent();
             LoadScene();
         }
         
