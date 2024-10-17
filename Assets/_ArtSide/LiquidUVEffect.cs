@@ -24,7 +24,5 @@ public class LiquidUVEffect : MonoBehaviour
 
         // Apply the offset to the texture's UV coordinates
         objectRenderer.material.SetTextureOffset("_BaseMap", initialOffset + offset);
-
-        Debug.Log("my material name : "+objectRenderer.material.name);
     }
 }
