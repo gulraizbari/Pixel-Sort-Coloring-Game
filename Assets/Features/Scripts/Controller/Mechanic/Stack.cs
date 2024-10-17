@@ -26,6 +26,8 @@ public class Stack : MonoBehaviour
     [SerializeField] private SubStack chainedSubStack;
     [SerializeField] private StackAddress chainedStackAddress;
     [SerializeField] [Range(0, 5)] private float duration2 = 0.45f;
+    public float yOffset = 0.35f;
+    [SerializeField] private BoxCollider _stackCollider;
     [Header("Haptic Values")] 
     [SerializeField] private float Amplitude = 0.5f;
     [SerializeField] private float Frquency = 1f; 
@@ -73,6 +75,14 @@ public class Stack : MonoBehaviour
                 yield return new WaitForSeconds(0.02f);
             }
         }
+    }
+    
+    public void UpdateColliderLength(Stack updatedStack)
+    {
+        var totalSize = yOffset * updatedStack.chipsStack.Count;
+        var position = _stackCollider.center;
+        _stackCollider.center = new Vector3(position.x, (totalSize / 2) + 0.1f, position.z);
+        _stackCollider.size = new Vector3(0.89f, totalSize, 1);
     }
 
     private void OnClickPad()

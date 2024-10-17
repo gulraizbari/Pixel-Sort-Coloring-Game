@@ -167,7 +167,15 @@ namespace PixelSort.Feature.GridGeneration
             for (var index = 0; index < currentLevelData.allStacks.stackData.Count; index++)
             {
                 var stack = currentLevelData.allStacks.stackData[index];
-                LoadStack(stack, index < _stackList.Count ? _stackList[index] : null, _gridPositions[index].position);
+                if (index < _stackList.Count)
+                {
+                    LoadStack(stack, _stackList[index], _gridPositions[index].position); 
+                    _stackList[index].UpdateColliderLength(_stackList[index]);
+                }
+                else
+                {
+                    LoadStack(stack, null, _gridPositions[index].position);
+                }
                 _baseOffset = 0.3f;
             }
         }
@@ -244,7 +252,7 @@ namespace PixelSort.Feature.GridGeneration
                 slate.transform.SetParent(transform);
             }
         }
-
+        
         #region Rope Mechanic
 
         private void SpawnRope(Stack stack1, int brickIndex1, Stack stack2, int brickIndex2, int ropeId)

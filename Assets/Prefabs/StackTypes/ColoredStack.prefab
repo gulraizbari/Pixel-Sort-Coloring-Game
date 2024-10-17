@@ -70,6 +70,10 @@ MonoBehaviour:
     indexOfSubStack: 0
     ropeId: 0
   duration2: 0.45
+  internalPaddingBwStack: 0.8
+  internalPaddingBwStack2: 1
+  yOffset: 0.35
+  _stackCollider: {fileID: 2304571384213320808}
   Amplitude: 0.5
   Frquency: 1
   duration: 0.02

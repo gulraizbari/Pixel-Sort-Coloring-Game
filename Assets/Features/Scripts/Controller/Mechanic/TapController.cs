@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 public class TapController : MonoBehaviour
 {
     [SerializeField] private float brickYOffset = 0.09f;
-    [FormerlySerializedAs("lastSelectedPad")] [SerializeField] private Stack lastSelectedStack;
+    [SerializeField] private Stack lastSelectedStack;
     [SerializeField] private List<Carrier> carriersList;
     [SerializeField] private int noOfCarriersPass;
     public static TapController Instance;
