@@ -322,4 +322,9 @@ public class Stack : MonoBehaviour
             }
         }
     }
+
+    public void DisableCollider()
+    { 
+        _stackCollider.enabled = false;
+    }
 }

@@ -52,7 +52,9 @@ namespace PixelSort.Feature.GridGeneration
         }
 
         void IGridGenerator.ReInitialize()
-        {
+        {  
+            _stackList.ForEach(stack => stack.DisableCollider());
+            _stackList.Clear();
             _newSlatesList.ForEach(x => x.gameObject.SetActive(false));
             _newSlatesList.Clear();
             SetLevelData();
